@@ -44,3 +44,4 @@ id_rsa
 
 ### config
 # /application/config/database.php
+/application/logs/
