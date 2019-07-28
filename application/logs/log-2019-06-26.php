@@ -1,0 +1,33 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2019-06-26 06:42:48 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 06:42:49 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 06:43:10 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 06:43:49 --> 404 Page Not Found: ../modules/bank_data/controllers/Bank_data/sounds
+ERROR - 2019-06-26 06:43:53 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 08:47:06 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:24:58 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:24:59 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:28:02 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:40:40 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:40:41 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 19:42:15 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 20:41:53 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 20:43:26 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 20:43:27 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 20:46:46 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 20:46:46 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:10:28 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:10:28 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:14:54 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:14:54 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:15:20 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:15:21 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:18:15 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:18:36 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:18:36 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:19:43 --> 404 Page Not Found: ../modules/bank_data/controllers/Bank_data/sounds
+ERROR - 2019-06-26 21:19:46 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:19:55 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:19:55 --> 404 Page Not Found: /index
+ERROR - 2019-06-26 21:23:29 --> 404 Page Not Found: /index

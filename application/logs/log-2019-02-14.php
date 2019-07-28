@@ -1,0 +1,37 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:33 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
+ERROR - 2019-02-14 05:32:34 --> Severity: Notice --> Undefined offset: 0 C:\xampp\htdocs\ecodu\application\modules\management\views\try_out\detail.php 154
