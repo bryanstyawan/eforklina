@@ -1,0 +1,47 @@
+13 Agustus = sosialisasi internal & eksternal
+
+- data lebih lanjut dipindah ke atas (Yang mengajukan permohonan)
+- tambah kolom di asssessing (Penjamin Biaya)(index)
+- hapus kolom pihak keluarga (index)
+- 1 kasus 1 akun
+
+	*	berkas minimal yang bisa diproses
+	- tahap penyelidikan & penyidikan 
+	1.	Surat tugas penunjukan sebagai jaksa atau penegak hukum lainnya
+	2.	surat permohonan pemeriksaan
+	- tahap penuntutan
+	1. 	surat tugas penunjukan sebagai jaksa 
+	2.	surat permohonan pemeriksaan
+	3. 	Surat penetapan hakim
+	- tahap eksekusi
+	1.	Surat tugas penunjukan sebagai jaksa atau penegak hukum lainnya
+	2.	surat permohonan pemeriksaan
+
+	*	asal instansti
+	*	nama,jabatan, nip/nrp jaksa
+	*	telpon, email
+	*	
+
+
+alur proses
+1. client dapat melakukan permoohonan tanpa harus mendaftar terlebih dahulu, persyaratan lihat diatas
+2. client melakukan upload berkas yang dibutuhkan
+2.a. client mendapatkan bukti pendaftaran online
+3. admin lapis pertama meverifikasi berkas dan dapat memberikan username-password
+4. ksp (ka satuan pelaksana) mengusulkan nama(tim)
+5. ksp mengusulkan ke kabid
+6. kabid verifikasi dan disposisi direktur
+7. direktur menetapkan surat 
+8. direktur disposisi ksp
+
+9. ksp (ka satuan pelaksana) memberikan jadwal
+
+tanggal 26 juli 
+
+
+
+note 26-07-2019
+1. ada prioritas di layanan
+2. penomoran
+3. tambah tanggal proses hukum yang akan dijalani
+4. nama pengawal tahanan harus disertai surat tugas tahanan	

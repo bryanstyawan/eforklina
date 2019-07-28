@@ -1,0 +1,10 @@
+Keterangan kondisi pasien yang dapat membantu
+
+- direktur
+ - template disposisi direktur
+	- koordinator tim 
+	- anggota tim
+	- tempat / waktu pelaksanaan
+	- penanggung biaya
+	- deadline waktu penyelesaian 
+	- lain-lain
