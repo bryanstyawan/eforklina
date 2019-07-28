@@ -1,0 +1,388 @@
+v1.0.0    
+2019-05-29
+==========
+New:
+Improved:
+- Perubahan sistem dan layout untuk kotak pesan disisi admin
+Fixed:
+- Menghapus pembatasan release soal
+- sortir data user berdasarkan nama
+- Menghapus kolom level user di pengguna
+
+v1.0.0    
+2019-05-15
+==========
+New:
+- Penambahan email pada pendaftaran akun
+Improved:
+- Detail Pengguna
+Fixed:
+- Hapus Soal try out
+- Pembahasan bimbel
+- Tampilan mobile di halaman utama bimbel
+
+v1.0.0    
+2019-04-10
+==========
+New:
+- Mobile layout penawaran bimbel
+- Perubahan penawaran bimbel
+Improved:
+Fixed:
+
+v1.0.0    
+2019-04-02
+==========
+New:
+- Mobile layout Video Materi
+- Mobile layout Bimbingan Belajar
+Improved:
+Fixed:
+
+v1.0.0    
+2019-03-27
+==========
+New:
+- Hapus data pilihan ganda
+- Mobile layout navigation
+- Mobile layout dashboard
+Improved:
+Fixed:
+
+v1.0.0    
+2019-03-23
+==========
+New:
+- Time Expired mini try out
+Improved:
+Fixed:
+
+v1.0.0    
+2019-03-20
+==========
+New:
+- Layout layanan try out
+Improved:
+Fixed:
+
+v1.0.0    
+2019-03-16
+==========
+New:
+- Upload file soal dan pembahasan (bimbel & tryout)
+Improved:
+- layout layanan bimbel
+Fixed:
+
+v1.0.0    
+2019-03-02
+==========
+New:
+- Raport Bimbingan
+Improved:
+Fixed:
+
+v1.0.0    
+2019-02-25
+==========
+New:
+Improved:
+- Pemindahan posisi mini map di quiz dan pre test
+- Penyesuaian layout bimbingan belajar
+- Penyesuaian layout bimbingan belajar trial
+Fixed:
+- Perbaikan Penilaian di quiz dan pre test
+
+v1.0.0    
+2019-02-24
+==========
+New:
+- Penambahan Durasi di management mini try out
+- Mini Try Out disisi user
+Improved:
+- Penyesuaian layout mini try out seperti layout try out
+- Mini map di Pembahasan try out, mini try out, quiz
+Fixed:
+- validasi untuk verifikasi paket soal
+
+v1.0.0    
+2019-02-23
+==========
+New:
+- verifikasi per paket di management try out
+- Ubah dan hapus di management try out
+Improved:
+Fixed:
+
+v1.0.0    
+2019-02-20
+==========
+New:
+- Management Mini Try Out
+- datetimepicker
+Improved:
+- Penyesuaian soal try out untuk mini try out
+- Tombol Jawaban yang benar
+Fixed:
+- Hapus Konfigurasi di try out
+
+v1.0.0    
+2019-02-17
+==========
+New:
+Improved:
+- layout try out
+- upgrade system framework
+- prevent video download 
+Fixed:
+
+v1.0.0    
+2019-02-16
+==========
+New:
+Improved:
+- verifikasi soal disisi user
+- layout verifikasi soal
+- layout header
+Fixed:
+
+v1.0.0    
+2019-02-15
+==========
+New:
+Improved:
+- verifikasi try out
+- Penyesuaian layout dashboard
+Fixed:
+
+v1.0.0    
+2019-02-11
+==========
+New:
+- verifikasi try out (test)
+Improved:
+Fixed:
+
+v1.0.0    
+2019-02-10
+==========
+New:
+- sidebar Bimbingan Belajar dan try out
+Improved:
+- Penyesuaian layout bimbingan belajar dan try out
+- Cara beli
+Fixed:
+
+v1.0.0    
+2019-02-07
+==========
+New:
+- Cara Beli
+Improved:
+Fixed:
+
+v1.0.0    
+2019-02-04
+==========
+New:
+- Penambahan gratis try out
+    - password gratis try out
+    - ubah password gratis try out
+    - verifikasi gratis try out
+- Ubah Soal try out & file
+Improved:
+Fixed:
+
+v1.0.0    
+2019-02-02
+==========
+New:
+- Link signin di signup
+- link signup di signin
+- trial try out
+Improved:
+- set format yang didukung di video materi (mp4|mkv|flv)
+- set maksimal ukuran video materi (500mb)
+- Progressbar upload video materi
+Fixed:
+
+v1.0.0    
+2019-01-29
+==========
+New:
+Improved:
+- Improved menu user
+Fixed:
+
+v1.0.0    
+2019-01-29
+==========
+New:
+- pembelian try out
+- halaman dashboard user
+Improved:
+- analisis akan muncul ketika try out telah selesai dan rangking akan muncul setelah analisis
+- layout try out disisi user
+- semua soal pre test dan quiz wajib dijawab semua
+Fixed:
+- chat admin
+
+v1.0.0    
+2019-01-27
+==========
+New:
+- rangking
+Improved:
+Fixed:
+
+v1.0.0    
+2019-01-26
+==========
+New:
+- Selesai try out
+- Layout Rangking
+- Analisis dan Pembahasan try out skd
+Improved:
+- Penyesuaian try out untuk simpan dan lewati
+- tampilkan tipe try out selain mini try out untuk user
+Fixed:
+
+v1.0.0    
+2019-01-24
+==========
+New:
+- Analisis Try Out
+Improved:
+Fixed:
+- Penyesuaian waktu try out
+- Penyesuaian layout try out
+
+v1.0.0    
+2019-01-22
+==========
+New:
+- setting https (hooks,ssl)
+- layout selesai try out
+- layout analisis try out
+Improved:
+- Penyesuaian jumlah soal di try out
+- Timeout try out
+- Quiz dan pre test tidak bisa lagi dilakukan ketika quiz dan pre test telah dikerjakan
+- tombol lanjutkan akan muncul ketika video diputar
+Fixed:
+- fixed query full_grup_id
+- tombol Pembahasan quiz dianalisis Pembahasan quiz dihilangkan
+- Perubahan text di video belajar dari 'chat dengan admin' menjadi 'tanyakan materi disini'
+
+v1.0.0    
+2019-01-19
+==========
+New:
+- Menu disisi mobile
+- chat disisi admin untuk pertanyaan user di bimbingan belajar & video materi
+- Management Try Out
+- Video Materi
+- Try Out user
+- Bimbingan Belajar trial
+- Chat user untuk pertanyaan di bimbingan belajar dan video materi
+Improved:
+- Penyederhanaan Management bimbingan belajar
+    - Pemindahan akses untuk input data konten
+    - Penyesuaian jumlah opsi jawaban berdasarkan tbi dan tpa
+- Penyederhanaan layout pre test dan quiz
+- Perubahan layout halaman login
+Fixed:
+- Menghapus Pembahasan pre test
+- Perubahan tata letak opsi jawaban di pre test dan quiz dipindah ke sebelah kiri jawaban
+- Pembenahan route untuk bimbingan belajar. jika sudah selesai langsung ketahap selanjutnya, tanpa harus kembali kehalaman awal bimbingan belajar, 
+    jika ditahap analisis, jika sudah selesai. kembali kehalaman awal bimbingan belajar. Disetiap tahap bimbingan belajar, tulisan "Selesai dan lanjutkan" 
+    diubah menjadi "lanjut ke video materi/quiz/" dan untuk analisis "kembali Ke materi". untuk ke materi bimbingan selanjutnya, 
+    bisa muncul ketika quiz sudah selesai tanpa harus melihat analisis (tahapan dari quiz tetap ke diarahkan ke halaman analisis).
+-  Perubahan Tata letak Pembahasan quiz, dipindah dan disejajarkan dengan tombol "Kembali ke materi" (analisis)
+- soal yang sudah terjawab, progress soal tetap muncul ketika discrool kebawan (pre test/quiz)
+- Perbaikan Footer
+
+v1.0.0    
+2019-01-09
+==========
+New:
+- Tombol Aturan bimbingan belajar disisi admin
+- Component disisi developer
+- Analisis
+- Pembahasan pre test dihilangkan
+- route lanjutkan diarahkan ke tahap selanjutnya
+Improved:
+- Tambah pilihan jawaban disetting menjadi 1 bundle soal (Multi choice)
+- Tombol tambah data pilihan jawaban akan muncul jika pilihan jawaban belum terisi
+- Jumlah pilihan jawaban disesuaikan dengan materi, jika tbi maka hanya 4 dan jika tpa hanya 5 
+- materi selanjutnya akan muncul, jika quiz telah dikerjakan.
+Fixed:
+- Perubahan nama dari Data Materi ke Data Materi bimbingan belajar
+- Perubahan nama dari "Selesaikan dan lanjutkan" menjadi "Lanjut ke Video Materi/Quiz/Analisis"
+- form-controll
+
+v1.0.0    
+2019-01-02
+==========
+New:
+- layout Pre test
+- layout video belajar
+- layout quiz
+- pre test & end step
+- video belajar & end step
+Improved:
+Fixed:
+
+v1.0.0    
+2018-12-31
+==========
+New:
+- verifikasi token pembelian paket bimbingan belajar
+- verifikasi user yang sudah membeli paket bimbingan belajar
+- halaman materi bimbingan belajar
+Improved:
+Fixed:
+
+v1.0.0    
+2018-12-30
+==========
+New:
+- halaman bimbingan belajar
+- layout penawaran bimbingan belajar
+- Token per layanan (generate, lihat token)
+Improved:
+- Penyesuaian Menu 
+Fixed:
+- Perbaikan penulisan text ketika gagal login, ketika user dan password salah
+
+v1.0.0    
+2018-12-29
+==========
+New:
+Improved:
+- Perubahan bank data video menjadi video materi. video materi permateri seperti soal quiz dan pre test. video materi ada didalam menu Management
+- Perubahan maximal upload video dari 100mb menjadi 300mb
+Fixed:
+
+v1.0.0    
+2018-12-16
+==========
+New:
+- Bank data video
+- Bank data buku
+- Bank data pengguna
+- Management quiz & pre test (Data Materi)
+    - Management Materi & sub materi
+    - Route pre test & quiz
+    - Management soal quiz & pre test
+    - Management pilihan ganda
+Improved:
+Fixed:
+
+v1.0.0    
+2018-12-13
+==========
+New:
+- Released Master
+Improved:
+Fixed:
