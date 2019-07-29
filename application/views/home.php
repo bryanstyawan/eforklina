@@ -10,6 +10,9 @@
         <link href="<?php echo base_url();?>assets_home/material/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets_home/material/css/mdb.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets_home/material/styles/main.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>assets_home/material/addons/materialize-stepper/dist/css/mstepper.min.css" rel="stylesheet">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">                
+        <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
     </head>
     <body id="top">
         <header <?php echo ($carousel == 'off') ? 'style="height: 0px;"' : '' ;?>>
@@ -73,7 +76,7 @@
             ?>
         </header>
         <div id="content"><?php ($content!='') ? $this->load->view($content) : '';?></div>
-        <div class="modal fade" id="progress_load" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade progress_load" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
             <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
 
@@ -105,7 +108,84 @@
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/popper.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/mdb.min.js"></script>
-        <script>new WOW().init();</script>
+        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/mdb.min.js"></script>   
+        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/addons/materialize-stepper/dist/js/mstepper.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>             
+        <!-- <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script> -->
+        <script>
+            new WOW().init();
+            function ajax_status(obj,arg)
+            {
+                if (obj.status == 1)
+                {
+                    // toastr["info"]("I was launched via jQuery!")                    
+                    toastr.success(obj.text)
+                    setTimeout(function(){
+                        $("#loadprosess").modal('hide');
+                        setTimeout(function(){
+                            // alert(arg);
+                            if (arg == null) {
+                                location.reload();                    
+                            }
+                            else if(arg == 'no-refresh')
+                            {
+
+                            }
+                            else
+                            {
+                                window.location.href = "<?=base_url();?>"+arg;                    
+                            }
+                        }, 500);
+                    }, 500);
+                }
+                else
+                {
+                    // Lobibox.notify('error', {
+                    //     msg: obj.text
+                    //     });
+                    setTimeout(function(){
+                        $("#loadprosess").modal('hide');
+                    }, 500);
+                }
+            }    
+
+            function ajax_catch(jqXHR,exception) {
+                $(".progress_load").modal('hide');
+                if (jqXHR.status === 0) 
+                {
+                    toastr.error('Not connect.\n Verify Network.')                    
+                } 
+                else if (jqXHR.status == 404) 
+                {
+                    toastr.error('Requested page not found. [404]')                    
+                } 
+                else if (jqXHR.status == 500) 
+                {
+                    toastr.error('ERROR '+jqXHR.status+'\n'+jqXHR.statusText)                    
+                } 
+                else if (exception === 'parsererror') 
+                {
+                    toastr.error('ERROR '+exception+'\n'+'Requested JSON parse failed')                                        
+                } 
+                else if (exception === 'timeout') 
+                {
+                    toastr.error('ERROR '+exception+'\n'+'Time out error')                    
+                } 
+                else if (exception === 'abort') 
+                {
+                    toastr.error('ERROR '+exception+'\n'+'Ajax request aborted')                                        
+                } 
+                else 
+                {
+                    toastr.error('ERROR '+jqXHR.status+'\n'+jqXHR.statusText)                    
+                }
+
+                setTimeout(function(){
+                    setTimeout(function(){
+                        $("#loadprosess").modal('hide');
+                    }, 500);
+                }, 500);    
+            }                    
+        </script>
     </body>
 </html>

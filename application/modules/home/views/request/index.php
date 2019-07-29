@@ -76,7 +76,27 @@
                                             ?>
                                         </select> 
                                     </div>
-                                </div>                                                                               
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="name">Alur Perkara</label>                                                                          
+                                    <div class="md-form">
+                                        <select id="f_alur_perkara" class="browser-default custom-select">
+                                            <option>- - - Pilih Salah Satu - - -</option>
+                                            <?php
+                                                if ($alur_proses != array()) {
+                                                    # code...
+                                                    for ($i=0; $i < count($alur_proses); $i++) { 
+                                                        # code...
+                                            ?>
+                                                    <option value="<?=$alur_proses[$i]['id'];?>"><?=$alur_proses[$i]['name'];?></option>                                                    
+                                            <?php
+                                                    }
+                                                } 
+                                            ?>
+                                        </select> 
+                                    </div>
+                                </div>                                                                                                               
                             </div>
                             <div class="center-on-small-only mb-4">
                                 <button class="btn btn-indigo ml-0" id="btn_send_app" type="submit"><i class="fa fa-paper-plane-o mr-2"></i> Kirim</button>
@@ -92,11 +112,11 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <p class="text-black px-5 mb-5 pb-3 lead text-center">
-                                    Terimakasih telah mengajukan layanan foreksi, Kode token anda adalah H6xs12. Gunakan kode token ini untuk melakukan verifikasi data.
+                                    
                                 </p>
 
                                 <p class="text-black col-md-12 text-center lead">
-                                    Download bukti pendaftaran layanan forensik.
+                                    Download form token pendaftaran.
                                     </br>
                                     <button type="button" class="btn btn-secondary px-3"><i class="fa fa-download" aria-hidden="true"></i></button>
                                 </p>
@@ -112,18 +132,58 @@
     $(document).ready(function()
     {
         $("#btn_send_app").click(function()
-        {            
-            $("#progress_load").modal('show');
-            $("#form_application").removeClass("fadeInUp");            
-            $("#form_application").addClass("fadeOutDown");
-            $("#form_application").css({"animation-name":"fadeOutDown"});            
-            $("#form_application").hide();
-            setTimeout(function(){
-                $("#form_message").show();                     
-                $("#form_message").addClass("fadeInOut");               
-                $("#form_message").css({"animation-name":"fadeInOut"});                
-                $("#progress_load").modal('hide');
-            }, 1000);                                        
-        });        
+        {
+            var f_nama_jaksa     = $("#f_nama_jaksa").val();
+            var f_jabatan_jaksa  = $("#f_jabatan_jaksa").val();
+            var f_nrp_jaksa      = $("#f_nrp_jaksa").val();
+            var f_telepon_jaksa  = $("#f_telepon_jaksa").val();
+            var f_email_jaksa    = $("#f_email_jaksa").val();
+            var f_instansi_jaksa = $("#f_instansi_jaksa").val();
+            var f_permohonan     = $("#f_permohonan").val();      
+            var f_alur_perkara   = $("#f_alur_perkara").val();                                                                  
+
+            var data_sender = {
+                'crud'              : 'insert',
+                'f_nama_jaksa'      : f_nama_jaksa,
+                'f_jabatan_jaksa'   : f_jabatan_jaksa,
+                'f_nrp_jaksa'       : f_nrp_jaksa,
+                'f_telepon_jaksa'   : f_telepon_jaksa,
+                'f_email_jaksa'     : f_email_jaksa,
+                'f_instansi_jaksa'  : f_instansi_jaksa,
+                'f_permohonan'      : f_permohonan,
+                'f_alur_perkara'    : f_alur_perkara
+            }                
+
+			$.ajax({
+				url :"<?php echo site_url();?>home/store_request",
+				type:"post",
+				data:{data_sender : data_sender},
+				beforeSend:function(){
+                    $(".progress_load").modal('show');
+				},
+				success:function(msg){
+					var obj = jQuery.parseJSON (msg);
+					ajax_status(obj,'no-refresh');
+                    if (obj.status == 1)
+                    {
+                        $("#form_application").removeClass("fadeInUp");            
+                        $("#form_application").addClass("fadeOutDown");
+                        $("#form_application").css({"animation-name":"fadeOutDown"});            
+                        $("#form_application").hide();                    
+                        setTimeout(function(){
+                            $("#form_message > div > div > div > div > p.text-black.px-5.mb-5.pb-3.lead.text-center").html('Terimakasih telah mengajukan layanan foreksi, Kode token anda adalah <b><u>'+obj.token+'</u></b>. Gunakan kode token ini untuk melakukan verifikasi data. <a class="btn btn-success" href="<?=base_url();?>home/verify/'+obj.token+'">click</a> disini untuk verifikasi data');                        
+                            $("#form_message").show();                     
+                            $("#form_message").addClass("fadeInOut");               
+                            $("#form_message").css({"animation-name":"fadeInOut"});                
+                            $(".progress_load").modal('hide');
+                        }, 1000);                                            
+                    }                    
+				},
+				error:function(jqXHR,exception)
+				{
+					ajax_catch(jqXHR,exception);					
+				}
+			})	
+        })
     });    
 </script>

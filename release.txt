@@ -1,7 +1,24 @@
 v1.0.0    
-2018-12-13
+2019-07-28
+==========
+New:
+- User Request
+- Setup ajax_status + ajax_catch
+- Gitignore for node_module
+- materialize-stepper
+- User Services
+- User verifiy file
+- User Services
+Improved:
+Fixed:
+Canceled:
+- Mlogin (home)
+
+v1.0.0    
+2019-07-28
 ==========
 New:
 - Base Master
 Improved:
 Fixed:
+Canceled:

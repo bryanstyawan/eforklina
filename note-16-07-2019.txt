@@ -10,9 +10,9 @@
 	1.	Surat tugas penunjukan sebagai jaksa atau penegak hukum lainnya
 	2.	surat permohonan pemeriksaan
 	- tahap penuntutan
-	1. 	surat tugas penunjukan sebagai jaksa 
-	2.	surat permohonan pemeriksaan
-	3. 	Surat penetapan hakim
+	1. 	Surat Tugas Penunjukan Sebagai Jaksa 
+	2.	Surat Permohonan Pemeriksaan
+	3. 	Surat Penetapan Hakim
 	- tahap eksekusi
 	1.	Surat tugas penunjukan sebagai jaksa atau penegak hukum lainnya
 	2.	surat permohonan pemeriksaan
