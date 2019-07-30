@@ -1,5 +1,21 @@
 v1.0.0    
-2019-07-28
+2019-07-30
+==========
+New:
+- route Request dan verifiy admin
+- route propose team
+- route verifiy kabid
+- route assign letter
+- route scheduling
+- mforensic_services
+Improved:
+Fixed:
+- token timeline
+Canceled:
+- Mbank_data (forensic_services)
+
+v1.0.0    
+2019-07-29
 ==========
 New:
 - User Request

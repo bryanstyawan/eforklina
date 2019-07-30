@@ -46,8 +46,7 @@
 							<!-- <td><?=$list[$i]->token;?></td> -->
 							<td></td>
 							<td>
-								<a class="btn btn-warning col-lg-12" onclick="verification_admin('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
-								<a class="btn btn-success col-lg-12" style="margin:5px;">Hak Akses</a>								
+								<a class="btn btn-warning col-lg-12" onclick="propose_team('<?=$list[$i]->token;?>')" style="margin:5px;">Usulkan Team</a>
 							</td>																																												
 					<?php
 							}
@@ -341,9 +340,9 @@ function upload(id) {
 	$("#oid").val(id);	
 }
 
-function verification_admin(token) {
+function propose_team(token) {
 	$.ajax({
-		url :"<?php echo site_url();?>forensic_services/verification_admin/"+token,
+		url :"<?php echo site_url();?>forensic_services/propose_team_process/"+token,
 		type:"post",
 		beforeSend:function(){
 			$("#loadprosess").modal('show');

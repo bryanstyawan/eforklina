@@ -112,7 +112,7 @@ class Home extends CI_Controller
 			if ($res_data['status'] == 1) {
 				# code...
 				$data_timeline = array(
-					'id_token'          => $data_store['token'],
+					'token'          => $data_store['token'],
 					'remarks'           => 'Mengajukan permohonan layanan',
 					'audit_time_insert' => date('Y-m-d H:i:s'), 'audit_user_insert' => $this->session->userdata('_session_user')
 				);
@@ -189,7 +189,7 @@ class Home extends CI_Controller
 			if ($res_data['status'] == 1) {
 				# code...
 				$data_timeline = array(
-					'id_token'          => $token,
+					'token'          => $token,
 					'remarks'           => 'Unggah Dokumen Tahap 1',
 					'audit_time_insert' => date('Y-m-d H:i:s'), 'audit_user_insert' => $this->session->userdata('_session_user')
 				);
@@ -246,7 +246,7 @@ class Home extends CI_Controller
 			if ($res_data['status'] == 1) {
 				# code...
 				$data_timeline = array(
-					'id_token'          => $data_store['token'],
+					'token'          => $data_store['token'],
 					'remarks'           => 'Mengisi data termohon',
 					'audit_time_insert' => date('Y-m-d H:i:s'), 'audit_user_insert' => $this->session->userdata('_session_user')
 				);

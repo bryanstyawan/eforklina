@@ -46,8 +46,7 @@
 							<!-- <td><?=$list[$i]->token;?></td> -->
 							<td></td>
 							<td>
-								<a class="btn btn-warning col-lg-12" onclick="verification_admin('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
-								<a class="btn btn-success col-lg-12" style="margin:5px;">Hak Akses</a>								
+								<a class="btn btn-warning col-lg-12" onclick="assign_letter('<?=$list[$i]->token;?>')" style="margin:5px;">Buat Surat Penetapan</a>
 							</td>																																												
 					<?php
 							}
@@ -341,9 +340,9 @@ function upload(id) {
 	$("#oid").val(id);	
 }
 
-function verification_admin(token) {
+function assign_letter(token) {
 	$.ajax({
-		url :"<?php echo site_url();?>forensic_services/verification_admin/"+token,
+		url :"<?php echo site_url();?>forensic_services/assign_letter_process/"+token,
 		type:"post",
 		beforeSend:function(){
 			$("#loadprosess").modal('show');
