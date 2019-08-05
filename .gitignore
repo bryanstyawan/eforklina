@@ -45,4 +45,4 @@ id_rsa
 # /application/config/database.php
 /application/logs/*
 /node_modules/
-/public/soal
+/public/
