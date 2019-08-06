@@ -9,10 +9,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="<?php echo base_url();?>assets_home/material/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo base_url();?>assets_home/material/css/mdb.min.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets_home/material/styles/main.css" rel="stylesheet">
-        <link href="<?php echo base_url();?>assets_home/material/addons/materialize-stepper/dist/css/mstepper.min.css" rel="stylesheet">        
+        <link href="<?php echo base_url();?>assets_home/material/styles/main.css" rel="stylesheet">        
+        <link href="<?php echo base_url();?>assets_home/material/css/addons-pro/mstepper.min.css" rel="stylesheet">
+        <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/datepicker/css/bootstrap-datepicker3.css'; ?>");</style>        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">                
-        <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
     </head>
     <body id="top">
         <header <?php echo ($carousel == 'off') ? 'style="height: 0px;"' : '' ;?>>
@@ -22,8 +22,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/request';?>">Permohonan</a></li>             
-                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/services';?>">Layanan</a></li>              
+                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/request';?>">Permohonan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/track_request/';?>">Penelusuran</a></li>                                 
                     <li class="nav-item"><a class="nav-link" href="#">Informasi</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Help Desk</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#about">Tentang Kami</a></li>                    
@@ -105,15 +105,26 @@
                 </div>
             </div>
         </footer>
-        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.2.1.min.js"></script>
+        <!-- <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.2.1.min.js"></script> -->
+        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/popper.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/mdb.min.js"></script>   
-        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/addons/materialize-stepper/dist/js/mstepper.min.js"></script>        
+        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/addons-pro/mstepper.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/addons-pro/datepicker.js"></script>        
+        <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/datepicker/bootstrap-datepicker.js"></script>        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>             
-        <!-- <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script> -->
         <script>
             new WOW().init();
+             
+            // $('.datepicker').pickadate();            
+            $('.datepicker').datepicker({
+                maxDate: new Date,
+                format: 'yyyy-mm-dd',
+                todayHighlight: true,
+                daysOfWeekHighlighted: "0,6"
+            });            
+            
             function ajax_status(obj,arg)
             {
                 if (obj.status == 1)

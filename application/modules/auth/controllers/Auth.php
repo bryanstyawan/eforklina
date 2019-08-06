@@ -35,11 +35,12 @@ class Auth extends CI_Controller
 			# code...
 			$data = array
 						(
-							'_session_user'     => $cekuser[0]->id,
-							'_session_name'     => $cekuser[0]->name,
-							'_session_username' => $cekuser[0]->username,
-							'_session_role'     => $cekuser[0]->id_role,
-							'_session_login'    => TRUE
+							'_session_user'      => $cekuser[0]->id,
+							'_session_name'      => $cekuser[0]->name,
+							'_session_username'  => $cekuser[0]->username,
+							'_session_role'      => $cekuser[0]->id_role,
+							'_session_name_role' => $cekuser[0]->nama_role,							
+							'_session_login'     => TRUE
 						);
 			$this->session->set_userdata($data);
 			$res = array

@@ -1,64 +1,73 @@
 <section class="row no-gutters" id="features">
-  <div class="col-lg-3 col-md-6 col-sm-12 deep-purple lighten-1 text-white">
-    <div class="p-5 text-center wow zoomIn" data-wow-delay=".1s"><i class="fa fa-line-chart fa-2x"></i>
-      <div class="h5 mt-3">Agile Frameworks</div>
-      <p class="mt-5">Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 purple lighten-1 text-white">
-    <div class="p-5 text-center wow zoomIn" data-wow-delay=".3s"><i class="fa fa-industry fa-2x"></i>
-      <div class="h5 mt-3">Corporate Strategy</div>
-      <p class="mt-5">Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition</p>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 teal lighten-1 text-white">
-    <div class="p-5 text-center wow zoomIn" data-wow-delay=".5s"><i class="fa fa-users fa-2x"></i>
-      <div class="h5 mt-3"> Workplace Diversity</div>
-      <p class="mt-5">Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 light-blue lighten-1 text-white">
-    <div class="p-5 text-center wow zoomIn" data-wow-delay=".7s"><i class="fa fa-bullhorn fa-2x"></i>
-      <div class="h5 mt-3"> Survival Strategies</div>
-      <p class="mt-5">Bring to the table win-win survival strategies to ensure proactive domination.</p>
-    </div>
-  </div>
+	<div class="col-lg-3 col-md-6 col-sm-12 deep-purple lighten-1 text-white">
+		<div class="p-5 text-center wow zoomIn" data-wow-delay=".1s"><i class="fa fa-line-chart fa-2x"></i>
+			<div class="h5 mt-3">ASSESSING</div>
+			<p class="mt-5">Kegiatan penilaian medik untuk menilai kecakapan terperiksa untuk menjalani proses hukum.</p>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 purple lighten-1 text-white">
+		<div class="p-5 text-center wow zoomIn" data-wow-delay=".3s"><i class="fa fa-industry fa-2x"></i>
+			<div class="h5 mt-3">TREATING</div>
+			<p class="mt-5">Kegiatan pemberian penanganan medik berbasis rumah sakit (hospital based) kepada terperiksa yang sedang menjalani hukum.</p>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 teal lighten-1 text-white">
+		<div class="p-5 text-center wow zoomIn" data-wow-delay=".5s"><i class="fa fa-users fa-2x"></i>
+			<div class="h5 mt-3">ESCORT</div>
+			<p class="mt-5">Kegiatan pendampingan terperiksa yang sedang menjalani hukum.</p>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 light-blue lighten-1 text-white">
+		<div class="p-5 text-center wow zoomIn" data-wow-delay=".7s"><i class="fa fa-bullhorn fa-2x"></i>
+			<div class="h5 mt-3">CONSULTING</div>
+			<p class="mt-5">Kegiatan permintaan pendapat tentang istilah/kondisi medis terperiksa berdasarkan berkas medik sebelumnya TANPA memeriksa kondisi medis terperiksa.</p>
+		</div>
+	</div>
 </section>
+
 <section class="text-center py-5 grey lighten-4" id="about">
-  <div class="container">
-    <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3">Why work with us?</h2>
-      <p class="px-5 mb-5 pb-3 lead blue-grey-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam.
-      </p>
-    </div>
-    <div class="row">
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".3s"><i class="fa fa-dashboard fa-3x orange-text"></i>
-        <h3 class="h4 mt-3">Design</h3>
-        <p class="mt-3 blue-grey-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-          hic.
-        </p>
-      </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-comments-o fa-3x cyan-text"></i>
-        <h3 class="h4 mt-3">Feedback</h3>
-        <p class="mt-3 blue-grey-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-          hic.
-        </p>
-      </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-cubes fa-3x red-text"></i>
-        <h3 class="h4 mt-3">Execution</h3>
-        <p class="mt-3 blue-grey-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti
-          hic.
-        </p>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+	<div class="wow fadeIn">
+		<h2 class="h1 pt-5 pb-3">E-Forklina</h2>
+		<!-- <p class="px-5 mb-5 pb-3 lead blue-grey-text">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+		aliqua. Ut enim ad minim veniam.
+		</p> -->
+	</div>
+	<div class="row">
+		<div class="col-md-3 mb-r wow fadeInUp" data-wow-delay=".3s">
+			<i class="fa fa-dashboard fa-3x orange-text"></i>
+			<h3 class="h4 mt-3">Design</h3>
+			<p class="mt-3 blue-grey-text">
+				Meningkatnya jumlah permintaan pelayanan forensik klinik dari Kejagung, Kejati, Kejari maupun lembaga lain
+			</p>
+		</div>
+		<div class="col-md-3 mb-r wow fadeInUp" data-wow-delay=".4s">
+			<i class="fa fa-comments-o fa-3x cyan-text"></i>
+			<h3 class="h4 mt-3">Feedback</h3>
+			<p class="mt-3 blue-grey-text">
+				Saat ini pelayanan forensik klinik belum terlalu dipahami oleh penegak hukum, termasuk oleh jaksa dari institusi Kejaksaan sendiri.
+			</p>
+		</div>
+		<div class="col-md-3 mb-r wow fadeInUp" data-wow-delay=".5s">
+			<i class="fa fa-cubes fa-3x red-text"></i>
+			<h3 class="h4 mt-3">Execution</h3>
+			<p class="mt-3 blue-grey-text">
+				E-forklina dibuat agar pengguna jasa pelayanan forensik klinik memiliki pemahaman yang sama tentang definisi, proses/alur, berkas yang dibutuhkan, dan keluaran yang dihasilkan.
+			</p>
+		</div>
+		<div class="col-md-3 mb-r wow fadeInUp" data-wow-delay=".5s">
+			<i class="fa fa-cubes fa-3x red-text"></i>
+			<h3 class="h4 mt-3">Execution</h3>
+			<p class="mt-3 blue-grey-text">
+				Bagi tim forensik klinik agar proses yang berjalan dapat dimonitor bersama-sama dengan pimpinan.
+			</p>
+		</div>		
+	</div>
+	</div>
 </section>
-<section class="py-5" id="projects">
+
+<!-- <section class="py-5" id="projects">
   <div class="container">
     <div class="wow fadeIn">
       <h2 class="text-center h1 my-4">Our best projects</h2>
@@ -139,8 +148,9 @@
       <div class="col-lg-6 col-xl-5 mb-3"><img class="img-fluid rounded z-depth-2" src=" <?php echo base_url();?>assets_home/material/img/san-francisco.jpg" alt="project image"/></div>
     </div>
   </div>
-</section>
-<section class="text-center py-5 indigo darken-1 text-white" id="pricing">
+</section> -->
+
+<!-- <section class="text-center py-5 indigo darken-1 text-white" id="pricing">
   <div class="container">
     <div class="wow fadeIn">
       <h2 class="h1 pt-5 pb-3">Our pricing plans</h2>
@@ -224,11 +234,12 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
 <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3 text-center">Our team members</h2>
+      <h2 class="h1 pt-5 pb-3 text-center">Team Kami</h2>
       <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
         esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.

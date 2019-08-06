@@ -1,14 +1,18 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.2.1.min.js"></script>
 <section id="form_application" style="background-image:url('<?php echo base_url();?>assets_home/material/img//panorama-3094696_1920.jpg');">
     <div class="rgba-black-strong py-5">
         <div class="container">
             <div class="wow fadeIn">
-                <h2 class="h1 text-white pt-5 pb-3 text-center">Layanan <?=$info[0]->name_forensik;?> [Tahap <?=$info[0]->name_alur_perkara;?>]</h2>
+                <h2 class="h1 text-white pt-5 pb-3 text-center">Mengisi Data Termohon <br>[Layanan <?=$info[0]->name_forensik;?> Tahap <?=$info[0]->name_alur_perkara;?>]</h2>
                 <!-- <p class="text-white px-5 mb-5 pb-3 lead text-center">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
                     esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
                 </p> -->
             </div>
+
+            <div class="progress md-progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: 70%; height: 20px" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+            </div>            
 
             <div class="row">
 
@@ -74,7 +78,7 @@
 
                                     <div class="col-md-6">
                                         <div class="md-form">
-                                            <input class="form-control" id="f_tanggal_surat" type="text"/>
+                                            <input class="form-control datepicker" id="f_tanggal_surat" type="text"/>
                                             <label for="name">Tanggal Surat </label>
                                         </div>
                                     </div>
@@ -104,10 +108,21 @@
 
                                     <div class="col-md-4">
                                         <div class="md-form">
-                                            <input class="form-control" id="f_tanggal_lahir_termohon" type="text"/>
+                                            <input class="form-control datepicker" id="f_tanggal_lahir_termohon" type="text"/>
                                             <label for="name">Tanggal Lahir</label>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12">
+                                        <label for="name">Jenis Kelamin</label>                                                                          
+                                        <div class="md-form">
+                                            <select id="f_jenis_kelamin_termohon" class="browser-default custom-select">
+                                            <option>- - - Pilih Salah Satu - - -</option>
+                                            <option value="L">Laki - Laki</option>
+                                            <option value="P">Perempuan</option>                                            
+                                            </select> 
+                                        </div>
+                                    </div>                                    
 
                                     <div class="col-md-6">
                                         <div class="md-form">
@@ -134,7 +149,23 @@
                                         <label for="name">Kewarganegaraan</label>                                                                          
                                         <div class="md-form">
                                             <select id="f_warga_termohon" class="browser-default custom-select">
-                                                <option>- - - Pilih Salah Satu - - -</option>
+                                            <option>- - - Pilih Salah Satu - - -</option>
+                                            <?php
+                                                if ($negara != array()) {
+                                                    # code...
+                                                    for ($i=0; $i < count($negara); $i++) { 
+                                                        # code...
+                                                        $select = "";
+                                                        if ($negara[$i]['id'] == 1) {
+                                                            # code...
+                                                            $select = "selected";
+                                                        }
+                                            ?>
+                                                    <option value="<?=$negara[$i]['id'];?>" <?=$select;?>><?=$negara[$i]['name'];?></option>                                                    
+                                            <?php
+                                                    }
+                                                } 
+                                            ?>
 
                                             </select> 
                                         </div>
@@ -154,7 +185,7 @@
                                         </div>
                                     </div>                                
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="display:none;">
                                         <div class="md-form">
                                             <input class="form-control" id="f_proses_hukum_termohon" type="text"/>
                                             <label for="name">Proses hukum yang sedang dijalani</label>
@@ -186,6 +217,10 @@
                     esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
                 </p> -->
             </div>
+
+            <div class="progress md-progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: 50%; height: 20px" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+            </div>            
 
             <div class="row">
                 <div class="card col-lg-12">
@@ -228,6 +263,7 @@
             var f_keluarga_termohon        = $("#f_keluarga_termohon").val();
             var f_warga_termohon           = $("#f_warga_termohon").val();
             var f_alamat_termohon          = $("#f_alamat_termohon").val();
+            var f_jenis_kelamin_termohon   = $("#f_jenis_kelamin_termohon").val(); 
             var f_keluhan_termohon         = $("#f_keluhan_termohon").val();
             var f_proses_hukum_termohon    = $("#f_proses_hukum_termohon").val();
             var f_token                    = '<?=$token;?>'
@@ -245,6 +281,7 @@
                 'f_agama_termohon'          : f_agama_termohon,
                 'f_keluarga_termohon'       : f_keluarga_termohon,
                 'f_warga_termohon'          : f_warga_termohon,
+                'f_jenis_kelamin_termohon'  : f_jenis_kelamin_termohon,
                 'f_alamat_termohon'         : f_alamat_termohon,
                 'f_keluhan_termohon'        : f_keluhan_termohon,
                 'f_proses_hukum_termohon'   : f_proses_hukum_termohon
@@ -271,6 +308,8 @@
                             $("#form_message").show();                     
                             $("#form_message").addClass("fadeInOut");               
                             $("#form_message").css({"animation-name":"fadeInOut"});                
+                            $(".progress-bar").css({"width":"100%"});
+                            $(".progress-bar").html('100%');                            
                             $(".progress_load").modal('hide');
                         }, 1000);                                            
                     }                    
