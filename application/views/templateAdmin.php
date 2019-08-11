@@ -50,6 +50,7 @@
 <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/loadme/style/loadme.css'; ?>");</style>
 <style type="text/css">@import url("<?php echo base_url() . 'assets/css/mobile/mobile-base.css'; ?>");</style>
 <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/fullcalendar/fullcalendar.min.css'; ?>");</style>
+<style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/chartjs/Chart.min.css'; ?>");</style>
 <!-- <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/fullcalendar/fullcalendar.print.css'; ?>");</style> -->
 <!-- Jquery -->
 <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -297,6 +298,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="<?php echo base_url(); ?>assets/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/chartjs/Chart.js" type="text/javascript"></script>
 
 
 <!-- Sparkline -->

@@ -13,6 +13,8 @@ New:
 - Component for info schedule
 - Build Forensic Team
 - Priority and schedule
+- chartJs
+- Mapping dataflow in dashboard
 Improved:
 - Note in verifiy [User]
 - Send email after insert data Termohon
