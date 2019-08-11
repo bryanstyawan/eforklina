@@ -35,6 +35,7 @@
 							for ($i=0; $i < count($list); $i++) { 
 								# code...
 					?>
+							<tr>
 							<td><?=$i+1;?></td>
 							<td><?=$list[$i]->name_forensik;?></td>
 							<td><?=$list[$i]->name_alur_perkara;?></td>
@@ -48,7 +49,8 @@
 							<td>
 								<a class="btn btn-warning col-lg-12" onclick="verification_admin('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
 								<a class="btn btn-success col-lg-12" style="margin:5px;">Hak Akses</a>								
-							</td>																																												
+							</td>
+							</tr>																																												
 					<?php
 							}
 						}

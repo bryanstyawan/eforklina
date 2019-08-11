@@ -1,4 +1,25 @@
 v1.0.0    
+2019-08-12
+==========
+New:
+- accessibility user role
+- Datepicker
+- Penelusuran + route
+- Services Files
+- Upload files [User]
+- Component pemohon [user]
+- Component pemohon [Internal]
+- Component Termohon [Internal]
+- PHPMailer
+- Setup Gitignore for vendor
+Improved:
+- Layout Home (Landing page)
+- add penjamin biaya, instansi [User Request]
+Fixed:
+- Table Request
+Canceled:
+
+v1.0.0    
 2019-07-30
 ==========
 New:
@@ -9,6 +30,7 @@ New:
 - route scheduling
 - mforensic_services
 Improved:
+- base materialize
 Fixed:
 - token timeline
 Canceled:
