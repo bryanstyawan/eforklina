@@ -35,16 +35,10 @@
                 </div>
             </div>
             
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label>Nama Pengawal Tahanan</label>
                     <input type="text" class="form-control timerange" value="<?=$list[0]->identitas_pengawal_service;?>" disabled="disabled">
-                </div>
-            </div>                
-
-            <div class="col-md-3" style="margin-top: 25px;">
-                <div class="form-group">
-                    <button class="btn btn-block btn-success"><i class="fa fa-download"></i> Dokumen</button>
                 </div>
             </div>                
 

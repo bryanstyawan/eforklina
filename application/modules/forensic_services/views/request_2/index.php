@@ -35,7 +35,7 @@
 							for ($i=0; $i < count($list); $i++) { 
 								# code...
 					?>
-						<tr>
+							<tr>
 							<td><?=$i+1;?></td>
 							<td><?=$list[$i]->name_forensik;?></td>
 							<td><?=$list[$i]->name_alur_perkara;?></td>
@@ -47,10 +47,9 @@
 							<!-- <td><?=$list[$i]->token;?></td> -->
 							<td></td>
 							<td>
-								<a class="btn btn-warning col-lg-12" onclick="verify_kabid('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
+								<a class="btn btn-warning col-lg-12" onclick="verification_admin('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
 							</td>
-						</tr>
-																																												
+							</tr>																																												
 					<?php
 							}
 						}
@@ -343,9 +342,9 @@ function upload(id) {
 	$("#oid").val(id);	
 }
 
-function verify_kabid(token) {
+function verification_admin(token) {
 	$.ajax({
-		url :"<?php echo site_url();?>forensic_services/verify_kabid_process/"+token,
+		url :"<?php echo site_url();?>forensic_services/verification_admin_2/"+token,
 		type:"post",
 		beforeSend:function(){
 			$("#loadprosess").modal('show');

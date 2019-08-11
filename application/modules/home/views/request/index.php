@@ -3,7 +3,7 @@
     <div class="rgba-black-strong py-5">
         <div class="container">
             <div class="wow fadeIn">
-                <h2 class="h1 text-white pt-5 pb-3 text-center">Permohonan Layanan Forensik Klinik [Data Pemohon]</h2>
+                <h2 class="h1 text-white pt-5 pb-3 text-center">Permohonan Layanan Forensik Klinik <br>[Data Pemohon]</h2>
                 <!-- <p class="text-white px-5 mb-5 pb-3 lead text-center">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
                     esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <label for="name">Asal Instansi</label>                                                                          
                                     <div class="md-form">
                                         <select id="f_instansi_jaksa" class="browser-default custom-select">
@@ -78,7 +78,7 @@
 
                                 <br>
                                 <br> 
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <label for="name">Jenis Permohonan</label>                                                                          
                                     <div class="md-form">
                                         <select id="f_permohonan" class="browser-default custom-select">
@@ -96,6 +96,20 @@
                                             ?>
                                         </select> 
                                     </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <?php
+                                        if ($layanan != array()) {
+                                            # code...
+                                            for ($i=0; $i < count($layanan); $i++) { 
+                                                # code...
+                                    ?>
+                                                <h3 class="label_layanan" style="display:none;" id="label_layanan_<?=$layanan[$i]['id'];?>"><?=$layanan[$i]['remarks'];?></h3>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
 
                                 <div class="col-md-12">
@@ -157,11 +171,11 @@
                                     
                                 </p>
 
-                                <p class="text-black col-md-12 text-center lead">
+                                <!-- <p class="text-black col-md-12 text-center lead">
                                     Download form token pendaftaran.
                                     </br>
                                     <button type="button" class="btn btn-secondary px-3"><i class="fa fa-download" aria-hidden="true"></i></button>
-                                </p>
+                                </p> -->
                             </div>
                         </div>
                     </div>
@@ -173,6 +187,12 @@
 <script>
     $(document).ready(function()
     {
+        $("#f_permohonan").change(function() 
+        {         
+            $(".label_layanan").css({"display":"none"});            
+            $("#label_layanan_"+$(this).val()).css({"display":""});            
+        })
+
         $("#btn_send_app").click(function()
         {
             var f_nama_jaksa     = $("#f_nama_jaksa").val();
@@ -215,7 +235,7 @@
                         $("#form_application").css({"animation-name":"fadeOutDown"});            
                         $("#form_application").hide();                    
                         setTimeout(function(){
-                            $("#form_message > div > div > div > div > p.text-black.px-5.mb-5.pb-3.lead.text-center").html('Terimakasih telah mengajukan layanan foreksi, Kode token anda adalah <b><u>'+obj.token+'</u></b>. Gunakan kode token ini untuk melakukan verifikasi data. <a class="btn btn-success" href="<?=base_url();?>home/verify/'+obj.token+'">click</a> disini untuk verifikasi data');                        
+                            $("#form_message > div > div > div > div > p.text-black.px-5.mb-5.pb-3.lead.text-center").html('Terimakasih telah mengajukan layanan foreksi, Kode token anda adalah <b><u>'+obj.token+'</u></b>. Gunakan kode token ini untuk melakukan verifikasi data. <a class="btn btn-success" href="<?=base_url();?>home/verify/'+obj.token+'">click</a> disini untuk melanjutkan proses permohonan.');
                             $("#form_message").show();                                                 
                             $("#form_message").addClass("fadeInOut");               
                             $("#form_message").css({"animation-name":"fadeInOut"});                

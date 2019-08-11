@@ -93,6 +93,11 @@
                                         </tbody>
                                     </table>                                    
                                 </div>
+                                <div class="col-md-12">
+                                    <p>Catatan :</p>
+                                    <p>Format yang diizinkan adalah pdf|docx|doc|jpg|jpeg|png|ppt|pptx</p>
+                                    <p>Ukuran maksimal file yang diizinkan adalah 15 MB</p>                                    
+                                </div>
                                 <div class="center-on-small-only mb-4">
                                     <button class="btn btn-indigo ml-0" data-toggle="modal" type="button" data-target="#modal_confirmation"><i class="fa fa-paper-plane-o mr-2"></i> Lanjutkan Proses Permohonan</button>
                                 </div>
@@ -140,7 +145,7 @@
     <div class="rgba-black-strong py-5">
         <div class="container">
             <div class="wow fadeIn">
-                <h2 class="h1 text-white pt-5 pb-3 text-center">Unggah Berkas Tahap Tahap <?=$info[0]->name_alur_perkara;?></h2>
+                <h2 class="h1 text-white pt-5 pb-3 text-center">Unggah Berkas Tahap <?=$info[0]->name_alur_perkara;?></h2>
                 <!-- <p class="text-white px-5 mb-5 pb-3 lead text-center">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
                     esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.

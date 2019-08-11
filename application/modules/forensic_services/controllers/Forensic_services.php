@@ -11,11 +11,11 @@ class Forensic_services extends CI_Controller {
 	public function request()
 	{
 		$this->Globalrules->session_rule();						
-		$data['title']     = 'Permohonan';
+		$data['title']     = 'Permohonan - Hak Akses dan Verifikasi Berkas Tahap I';
 		$data['content']   = 'forensic_services/request/index';
-		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,3);
+		$data['list']      = $this->Mforensic_services->get_all_request_in(NULL,4);
 		$data['timeline']  = array();		
-		$data['role_user'] = $this->Allcrud->listData('user_role');
+		$data['role_user'] = $this->Allcrud->listData('user_role'); 
 		$this->load->view('templateAdmin',$data);
 	}
 
@@ -23,7 +23,8 @@ class Forensic_services extends CI_Controller {
 	{
 		# code...
 		$data['token']	   = $token;
-		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,3);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,4);
+		$data['files']     = $this->Mforensic_services->get_all_files_in($token);		
 		$this->load->view('forensic_services/request/admin/index',$data);						
 	}
 
@@ -48,6 +49,43 @@ class Forensic_services extends CI_Controller {
 				);
 				$res_data = $this->Allcrud->addData('mr_timeline',$data_timeline);				
 			}
+
+			if ($status == '9') {
+				# code...
+				//Load email library 
+				$this->load->library('email');
+
+				$subject = 'Permohonan layanan forensik klinik';
+				$message = '<p>This message has been sent for testing purposes.</p>';
+				
+				// Get full html:
+				$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+				<head>
+					<meta http-equiv="Content-Type" content="text/html; charset=' . strtolower(config_item('charset')) . '" />
+					<title>' . html_escape($subject) . '</title>
+					<style type="text/css">
+						body {
+							font-family: Arial, Verdana, Helvetica, sans-serif;
+							font-size: 16px;
+						}
+					</style>
+				</head>
+				<body>
+				' . $message . '
+				</body>
+				</html>';
+				// Also, for getting full html you may use the following internal method:
+				//$body = $this->email->full_html($subject, $message);
+				
+				$result = $this->email
+					->from('littlecorz2@gmail.com')
+					->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
+					->to('bryanstyawan@hotmail.com')
+					->subject($subject)
+					->message($body)
+					->send();
+			}
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan telah dikirim.');			
 		}		
 
@@ -65,7 +103,7 @@ class Forensic_services extends CI_Controller {
 		$this->Globalrules->session_rule();						
 		$data['title']     = 'Permohonan - Usulan Tim';
 		$data['content']   = 'forensic_services/propose/index';
-		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,4);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,7);
 		$data['timeline']  = array();		
 		$data['role_user'] = $this->Allcrud->listData('user_role');
 		$this->load->view('templateAdmin',$data);
@@ -74,17 +112,77 @@ class Forensic_services extends CI_Controller {
 	public function propose_team_process($token)
 	{
 		$data['token']	   = $token;
-		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,4);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,7);
+		$data['events']	   = $this->Mforensic_services->get_events();		
+		$data['priority']  = $this->Allcrud->listData('mr_priority')->result_array();
+		$this->get_data_doc($token);
+		$data['dokter']	   = $this->Mforensic_services->get_dokter($token,'A');		
 		$this->load->view('forensic_services/propose/detail/index',$data);
 	}
 
+	public function delete_team_dokter($id,$token)
+	{
+		# code...
+		$res_data    = $this->Allcrud->editData('mr_team_dokter',array('status'=>'D'),array('id'=>$id));
+		$text_status = $this->Globalrules->check_status_res($res_data,'Team telah dibentuk.');		
+		$res = array
+					(
+						'status' => $res_data,
+						'text'   => $text_status
+					);
+		echo json_encode($res);		
+	}
+
+	public function update_team_dokter($id,$token)
+	{
+		# code...
+		$res_data    = $this->Allcrud->editData('mr_team_dokter',array('status'=>'A'),array('id'=>$id));
+		$text_status = $this->Globalrules->check_status_res($res_data,'Team telah dihapus.');		
+		$res = array
+					(
+						'status' => $res_data,
+						'text'   => $text_status
+					);
+		echo json_encode($res);		
+	}	
+
+	public function get_data_doc($token)
+	{
+		# code...
+		$get_data = $this->Allcrud->getData('mr_team_dokter',array('token'=>$token))->result_array();
+		if ($get_data == array()) {
+			# code...
+			$get_doc = $this->Allcrud->listData('mr_dokter')->result_array();			
+			if ($get_doc != array()) {
+				# code...
+				for ($i=0; $i < count($get_doc); $i++) { 
+					# code...
+					$data_store = array(
+											'id_dokter' => $get_doc[$i]['id'],
+											'status'    => 'D',
+											'token'     => $token
+										);
+					$res_data = $this->Allcrud->addData('mr_team_dokter',$data_store);										
+				}
+			}
+		}						
+	}
+
+	public function get_data_doc_status($token,$status)
+	{
+		# code...
+		$data['dokter']	   = $this->Mforensic_services->get_dokter($token,$status);		
+		$data['token'] = $token;
+		$data['label'] = $status;
+		$this->load->view('forensic_services/propose/detail/doc_avail',$data);
+	}
 
 	public function verify_kabid()
 	{
 		$this->Globalrules->session_rule();						
 		$data['title']     = 'Permohonan - Verifikasi Kabid Ke Direktur';
 		$data['content']   = 'forensic_services/verify_kabid/index';
-		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,5);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,8);
 		$data['timeline']  = array();		
 		$data['role_user'] = $this->Allcrud->listData('user_role');
 		$this->load->view('templateAdmin',$data);
@@ -93,7 +191,10 @@ class Forensic_services extends CI_Controller {
 	public function verify_kabid_process($token)
 	{
 		$data['token']	   = $token;
-		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,5);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,8);
+		$data['events']	   = $this->Mforensic_services->get_events();		
+		$data['priority']  = $this->Allcrud->listData('mr_priority')->result_array();		
+		$data['dokter']	   = $this->Mforensic_services->get_dokter($token,'A');		
 		$this->load->view('forensic_services/verify_kabid/detail/index',$data);
 	}
 
@@ -102,7 +203,7 @@ class Forensic_services extends CI_Controller {
 		$this->Globalrules->session_rule();						
 		$data['title']     = 'Permohonan - Menetapkan Surat';
 		$data['content']   = 'forensic_services/assign_letter/index';
-		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,6);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,8);
 		$data['timeline']  = array();		
 		$data['role_user'] = $this->Allcrud->listData('user_role');
 		$this->load->view('templateAdmin',$data);
@@ -111,7 +212,7 @@ class Forensic_services extends CI_Controller {
 	public function assign_letter_process($token)
 	{
 		$data['token']	   = $token;
-		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,6);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,8);
 		$this->load->view('forensic_services/assign_letter/detail/index',$data);
 	}
 	
@@ -120,7 +221,7 @@ class Forensic_services extends CI_Controller {
 		$this->Globalrules->session_rule();						
 		$data['title']     = 'Permohonan -  Memberi Jadwal';
 		$data['content']   = 'forensic_services/scheduling/index';
-		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,7);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,6);
 		$data['timeline']  = array();		
 		$data['role_user'] = $this->Allcrud->listData('user_role');
 		$this->load->view('templateAdmin',$data);
@@ -129,9 +230,35 @@ class Forensic_services extends CI_Controller {
 	public function scheduling_process($token)
 	{
 		$data['token']	   = $token;
-		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,7);
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,6);
+		$data['events']	   = $this->Mforensic_services->get_events();		
+		$data['priority']  = $this->Allcrud->listData('mr_priority')->result_array();
 		$this->load->view('forensic_services/scheduling/detail/index',$data);
 	}	
+
+	public function set_scheduling($token)
+	{
+		# code...
+		$res_data                         = "";
+		$text_status                      = "";
+		$data_sender                      = $this->input->post('data_sender');		
+		$data_store['id_priority']        = $data_sender['f_priority'];
+		$data_store['date_scheduling']    = $data_sender['f_date_scheduling'];
+		$data_store['remarks_scheduling'] = $data_sender['f_remarks_scheduling'];				
+		$get_data                         = $this->Allcrud->getData('mr_request',array('token'=>$token))->result_array();				
+		if ($get_data != array()) {
+			# code...
+			$res_data    = $this->Allcrud->editData('mr_services',$data_store,array('token'=>$token));					
+			$text_status = $this->Globalrules->check_status_res($res_data,'Penjadwalan telah disimpan.');			
+		}		
+
+		$res = array
+					(
+						'status' => $res_data,
+						'text'   => $text_status
+					);
+		echo json_encode($res);		
+	}
 
 
 
@@ -411,6 +538,27 @@ class Forensic_services extends CI_Controller {
 		# code...
 		$data['list'] = $this->get_data($id,'result_array','mr_assessing');
 		$this->load->view('assessing/assessing/direktur/prepare/index',$data);				
+	}
+	
+	
+	public function request_2()
+	{
+		$this->Globalrules->session_rule();						
+		$data['title']     = 'Verifikasi Berkas dan Identitas Tahap II';
+		$data['content']   = 'forensic_services/request_2/index';
+		$data['list']	   = $this->Mforensic_services->get_all_request_in(NULL,5);
+		$data['timeline']  = array();		
+		$data['role_user'] = $this->Allcrud->listData('user_role');
+		$this->load->view('templateAdmin',$data);
+	}
+	
+	public function verification_admin_2($token)
+	{
+		# code...
+		$data['token']	   = $token;
+		$data['list']	   = $this->Mforensic_services->get_all_request_in($token,5);
+		$data['files']     = $this->Mforensic_services->get_all_files_in($token);		
+		$this->load->view('forensic_services/request_2/admin/index',$data);						
 	}	
 
 }

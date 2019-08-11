@@ -13,216 +13,75 @@
     <div class="col-lg-1 pull-right"><button class="btn btn-block btn-danger closeData"><i class="fa fa-close"></i></button></div>
 </div>
 <?php
-// echo "<pre>";
-// // print_r($list);
-// echo "</pre>";
-
 // die();
 if ($list != 0) {
     # code...
 ?>
 <div class="col-xs-5">
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Data Pemohon</h3>
-        </div>
-        <hr>
-        <div class="box-body">
-
-            <div class="row col-lg-12">
-                <div class="col-md-12">
-                    <!-- <input class="form-control" type="hidden" id="oid" value="">                     -->
-                    <div class="form-group">
-                        <label>Nama Jaksa</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->name_jaksa;?>" disabled="disabled">
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Jabatan Jaksa</label>
-                        <input type="text" class="form-control timerange" id="f_tanggal_surat" value="<?=$list[0]->jabatan;?>" disabled="disabled">
-                    </div>
-                </div>
-                
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>NRP/NIP Jaksa</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->nrp;?>" disabled="disabled">
-                    </div>
-                </div>
-                
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Telepon Jaksa</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->telepon_jaksa;?>" disabled="disabled">
-                    </div>
-                </div>
-                
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->email_jaksa;?>" disabled="disabled">
-                    </div>
-                </div>
-                
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Asal Instansi</label>
-                        <input type="text" class="form-control timerange" value="" disabled="disabled">
-                    </div>
-                </div>                
-
-            </div>
-        </div><!-- /.box-body -->
-    </div><!-- /.box -->
+    <?=$this->load->view('forensic_services/component/info_pemohon',$list);?>    
 </div>
 <div class="col-xs-6">
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Data Termohon</h3>
-        </div>
-        <hr>
-        <div class="box-body">
-
-            <div class="row col-lg-12">
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Layanan</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->name_services;?>" disabled="disabled">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Proses Hukum</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->name_perkara;?>" disabled="disabled">
-                    </div>
-                </div>                
-
-                <div class="col-md-12">                    
-                    <div class="form-group">
-                        <label>Nomor Surat Permohonan</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->no_surat_service;?>" disabled="disabled">
-                    </div>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Tanggal Surat</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->tanggal_surat_service;?>" disabled="disabled">
-                    </div>
-                </div>
-                
-                <div class="col-md-9">
-                    <div class="form-group">
-                        <label>Nama Pengawal Tahanan</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->identitas_pengawal_service;?>" disabled="disabled">
-                    </div>
-                </div>                
-
-                <div class="col-md-3" style="margin-top: 25px;">
-                    <div class="form-group">
-                        <button class="btn btn-block btn-success"><i class="fa fa-download"></i> Dokumen</button>
-                    </div>
-                </div>                
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Keluhan medis secara umum</label>
-                        <textarea  class="form-control" disabled="disabled"><?=$list[0]->keluhan_medis_service;?></textarea>
-                    </div>
-                </div>                                
-
-                <div class="col-md-12">
-                    <div class="form-group" style="border-top: 1px solid #9E9E9E;"></div>
-                </div>					
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Nama</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->name_termohon;?>" disabled="disabled">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Tempat</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->tempat_lahir_termohon;?>" disabled="disabled">
-                    </div>
-                </div>				
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Tanggal Lahir</label>
-                        <input type="text" class="form-control timerange" value="<?=$list[0]->tanggal_lahir_termohon;?>" disabled="disabled">
-                    </div>
-                </div>				
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Suku</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->suku_termohon;?>" disabled="disabled">
-                    </div>
-                </div>				
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Agama</label>
-                        <select class="form-control" id="f_agama" placeholder="Agama" disabled="disabled">
-                            <option value="" selected> - - - -</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Pihak Keluarga</label>
-                        <input type="text" class="form-control" value="<?=$list[0]->pihak_keluarga_termohon;?>" disabled="disabled">
-                    </div>
-                </div>				
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Kewarganegaraan</label>
-                        <select class="form-control" id="f_warganegara" disabled="disabled">
-                            <option></option>
-                        </select>
-                    </div>
-                </div>										
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <textarea  class="form-control" disabled="disabled"><?=$list[0]->alamat_termohon;?></textarea>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.box-body -->
-
-        <div class="box-footer">
-            <a class="btn btn-success pull-right" id="btn-proses-yes-ksp"><i class="fa fa-save"></i>&nbsp; Lapor Ke KSP</a>
-        </div>
-    </div><!-- /.box -->
+    <?=$this->load->view('forensic_services/component/info_berkas',$files);?>   
+    <a class="btn btn-success pull-right" id="btn-proses-yes-ksp"><i class="fa fa-save"></i>&nbsp; Selesai</a>     
 </div>  
 <?php
 }
 ?>            
 <script>
+
+    function upload_data(id,token) {
+        file_pendukung = $('#data_upload_'+id).prop('files')[0];
+        if(file_pendukung != undefined)
+        {
+            var form_data  = new FormData();
+            form_data.append('file', file_pendukung);
+            $.ajax({
+                url: '<?php echo site_url();?>home/upload_step_1/'+token+'/'+id, // point to server-side PHP script
+                // dataType: 'json',  // what to expect back from the PHP script, if anything
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                beforeSend:function(){
+                    $(".progress_load").modal('show');
+                    Lobibox.notify('info', {
+                        msg: 'Menyiapkan data untuk unggah file'
+                    });                    
+                },
+                success: function(msg1){
+                    var obj1 = jQuery.parseJSON (msg1);
+                    ajax_status(obj1);
+                },
+                error:function(jqXHR,exception)
+                {
+                    ajax_catch(jqXHR,exception);					
+                }
+            });
+        }
+        else
+        {
+            $(".progress_load").modal('show');
+            Lobibox.notify('info', {
+                msg: 'Harap pilih file terlebih dahulu sebelum melakukan unggah file.'
+            });                                
+        }
+    }    
+    
+        
     $(document).ready(function(){        
 
         $("#btn-proses-yes-ksp").click(function() {
             var data_sender = {
-			'remarks' : 'Telah memverifikasi berkas, memberi hak akses dan melaporkanya ke Kepala Satuan Pelaksana'
+			'remarks' : 'Telah memverifikasi berkas, memberi hak akses dan meneruskan ke tahap selanjutnya'
 		}		
             Lobibox.confirm({
                 title: "Konfirmasi",
-                msg: "Apakah anda ingin melaporkan permintaan layanan ini ke Kepala Satuan Pelaksana ?",
+                msg: "Lanjut ke tahap berikutnya ?",
                 callback: function ($this, type) {
                     if (type === 'yes'){
                         $.ajax({
-                            url :"<?php echo site_url();?>forensic_services/next_step/<?=$token;?>/4/",
+                            url :"<?php echo site_url();?>forensic_services/next_step/<?=$token;?>/5/",
                             type:"post",
                             data:{data_sender : data_sender},                            
                             beforeSend:function(){

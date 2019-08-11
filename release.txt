@@ -2,6 +2,39 @@ v1.0.0
 2019-08-12
 ==========
 New:
+- Fullcalender
+- Remarks for layanan [User]
+- nama pengawal [user]
+- Process for admin 2
+- Component for info Pemohon
+- Component for info Termohon
+- Component for info berkas
+- Component for info team
+- Component for info schedule
+- Build Forensic Team
+- Priority and schedule
+Improved:
+- Note in verifiy [User]
+- Send email after insert data Termohon
+- Setup Upload files
+- dataflow in verifiy
+- Layout message for respond request
+- show nama instansi
+- Code Review in request admin
+- Code Review in Build team
+- Code Review in Create schedule
+- Code Review in kabid
+- Upload Files in admin
+- Send email in Kabid process
+Fixed:
+- Table Request
+Canceled:
+- No surat permohonan & tanggal surat [User Services]
+
+v1.0.0    
+2019-08-08
+==========
+New:
 - accessibility user role
 - Datepicker
 - Penelusuran + route

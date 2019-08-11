@@ -48,7 +48,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         Asal Instansi
-                                        <span class="badge badge-primary badge-pill"><?=$info[0]->id_instansi;?></span>
+                                        <span class="badge badge-primary badge-pill"><?=$info[0]->name_instansi;?></span>
                                     </li>                    
                                 </ul>                        
                             <?php
@@ -69,27 +69,20 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <!-- <h2 class="col-md-12">Surat</h2>                                     -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="display: none;">
                                         <div class="md-form">
                                             <input class="form-control" id="f_nomor_surat" type="text"/>
                                             <label for="name">No Surat Permohonan</label>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6" style="display: none;">
                                         <div class="md-form">
                                             <input class="form-control datepicker" id="f_tanggal_surat" type="text"/>
                                             <label for="name">Tanggal Surat </label>
                                         </div>
                                     </div>
-                                    
-                                    <div class="col-md-6">
-                                        <div class="md-form">
-                                            <input class="form-control" id="f_nama_pengawal" type="text"/>
-                                            <label for="name">Nama Pengawal Tahanan</label>
-                                        </div>
-                                    </div>
-
+                                
 
                                     <h2 class="col-md-12">Data Termohon</h2>
                                     <div class="col-md-4">
@@ -191,6 +184,13 @@
                                             <label for="name">Proses hukum yang sedang dijalani</label>
                                         </div>
                                     </div>                                
+
+                                    <div class="col-md-6">
+                                        <div class="md-form">
+                                            <input class="form-control" id="f_nama_pengawal" type="text"/>
+                                            <label for="name">Nama Pengawal Tahanan</label>
+                                        </div>
+                                    </div>                                    
                                 </div>
                                 <div class="center-on-small-only mb-4">
                                     <button class="btn btn-indigo ml-0" id="btn_send_app" type="submit"><i class="fa fa-paper-plane-o mr-2"></i> Kirim</button>

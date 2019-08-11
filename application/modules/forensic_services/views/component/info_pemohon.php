@@ -45,7 +45,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label>Asal Instansi</label>
-                    <input type="text" class="form-control timerange" value="" disabled="disabled">
+                    <input type="text" class="form-control timerange" value="<?=$list[0]->name_instansi;?>" disabled="disabled">
                 </div>
             </div>                
 

@@ -14,6 +14,8 @@
 				<tr>
 					<th>No</th>
 					<th>Layanan</th>
+					<th>Prioritas</th>
+					<th>Rekomendasi Jadwal</th>
 					<th>Proses Hukum</th>
 					<th>Nama Jaksa</th>
 					<th>Jabatan Jaksa</th>
@@ -35,19 +37,23 @@
 							for ($i=0; $i < count($list); $i++) { 
 								# code...
 					?>
-							<td><?=$i+1;?></td>
-							<td><?=$list[$i]->name_forensik;?></td>
-							<td><?=$list[$i]->name_alur_perkara;?></td>
-							<td><?=$list[$i]->name_jaksa;?></td>
-							<td><?=$list[$i]->jabatan;?></td>
-							<td><?=$list[$i]->nrp;?></td>
-							<td><?=$list[$i]->telepon_jaksa;?></td>
-							<td><?=$list[$i]->email_jaksa;?></td>
-							<!-- <td><?=$list[$i]->token;?></td> -->
-							<td></td>
-							<td>
-								<a class="btn btn-warning col-lg-12" onclick="propose_team('<?=$list[$i]->token;?>')" style="margin:5px;">Usulkan Team</a>
-							</td>																																												
+								<tr>
+									<td><?=$i+1;?></td>
+									<td><?=$list[$i]->name_forensik;?></td>
+									<td></td>
+									<td><?=$list[$i]->date_scheduling;?></td>
+									<td><?=$list[$i]->name_alur_perkara;?></td>
+									<td><?=$list[$i]->name_jaksa;?></td>
+									<td><?=$list[$i]->jabatan;?></td>
+									<td><?=$list[$i]->nrp;?></td>
+									<td><?=$list[$i]->telepon_jaksa;?></td>
+									<td><?=$list[$i]->email_jaksa;?></td>
+									<!-- <td><?=$list[$i]->token;?></td> -->
+									<td></td>
+									<td>
+										<a class="btn btn-warning col-lg-12" onclick="propose_team('<?=$list[$i]->token;?>')" style="margin:5px;">Usulkan Team</a>
+									</td>									
+								</tr>
 					<?php
 							}
 						}

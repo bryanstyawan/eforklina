@@ -275,7 +275,7 @@ class Home extends CI_Controller
 			$data_store['keluhan_medis']             = $data_sender['f_keluhan_termohon'];
 			$data_store['proses_hukum']              = $data_sender['f_proses_hukum_termohon'];			
 			$data_store['status']                    = 4;
-			$res_data = $this->Allcrud->editData('mr_request',array('status'=>3),array('token'=>$data_store['token']));			
+			$res_data = $this->Allcrud->editData('mr_request',array('status'=>4),array('token'=>$data_store['token']));			
 			$res_data = $this->Allcrud->addData_with_return_id('mr_services',$data_store);
 			if ($res_data['status'] == 1) {
 				# code...
@@ -288,6 +288,41 @@ class Home extends CI_Controller
 			}
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan anda telah berhasil diajukan.');
 
+			$this->load->library('email');
+
+			$subject = 'Permohonan layanan forensik klinik';
+			$message = '<p>Terima kasih telah melakukan permohonan layanan forensik klinik [E-forklina].
+							<br>
+						</p>';
+			
+			// Get full html:
+			$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+			<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=' . strtolower(config_item('charset')) . '" />
+				<title>' . html_escape($subject) . '</title>
+				<style type="text/css">
+					body {
+						font-family: Arial, Verdana, Helvetica, sans-serif;
+						font-size: 16px;
+					}
+				</style>
+			</head>
+			<body>
+			' . $message . '
+			</body>
+			</html>';
+			// Also, for getting full html you may use the following internal method:
+			//$body = $this->email->full_html($subject, $message);
+			
+			$result = $this->email
+				->from('littlecorz2@gmail.com')
+				->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
+				->to('bryanstyawan@hotmail.com')
+				->subject($subject)
+				->message($body)
+				->send();
+			
 			
 		} elseif ($data_sender['crud'] == 'update') {
 			# code...
@@ -380,8 +415,8 @@ class Home extends CI_Controller
 		$res_data                = "";
 		$text_status             = "";
 		$config['upload_path']   = FCPATH."/public/request/".$token."/";
-		$config['allowed_types'] = 'pdf|csv|docx|doc|xlsx|xl|xls|jpg|jpeg|png|ppt|pptx';
-		$config['max_size']      = '3000';
+		$config['allowed_types'] = 'pdf|docx|doc|jpg|jpeg|png|ppt|pptx';
+		$config['max_size']      = '15000';
 		$data                    = "";
 		$this->load->library('upload', $config);
 		

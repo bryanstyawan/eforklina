@@ -49,6 +49,8 @@
 <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'; ?>");</style>
 <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/loadme/style/loadme.css'; ?>");</style>
 <style type="text/css">@import url("<?php echo base_url() . 'assets/css/mobile/mobile-base.css'; ?>");</style>
+<style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/fullcalendar/fullcalendar.min.css'; ?>");</style>
+<!-- <style type="text/css">@import url("<?php echo base_url() . 'assets/plugins/fullcalendar/fullcalendar.print.css'; ?>");</style> -->
 <!-- Jquery -->
 <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <!-- CKeditors -->
@@ -335,6 +337,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- DataTables -->
 <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar.min.js"></script>
 <script type="text/javascript">
   /*********************************************************************************************/
 /* function = numberWithCommas(x)

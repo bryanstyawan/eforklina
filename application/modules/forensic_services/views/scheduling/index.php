@@ -1,5 +1,3 @@
-<!-- <script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script type='text/javascript' src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script> -->
 <section id="forensikdata"></section>
 
 <section id="viewdata">
@@ -35,19 +33,21 @@
 							for ($i=0; $i < count($list); $i++) { 
 								# code...
 					?>
-							<td><?=$i+1;?></td>
-							<td><?=$list[$i]->name_forensik;?></td>
-							<td><?=$list[$i]->name_alur_perkara;?></td>
-							<td><?=$list[$i]->name_jaksa;?></td>
-							<td><?=$list[$i]->jabatan;?></td>
-							<td><?=$list[$i]->nrp;?></td>
-							<td><?=$list[$i]->telepon_jaksa;?></td>
-							<td><?=$list[$i]->email_jaksa;?></td>
-							<!-- <td><?=$list[$i]->token;?></td> -->
-							<td></td>
-							<td>
-								<a class="btn btn-warning col-lg-12" onclick="scheduling('<?=$list[$i]->token;?>')" style="margin:5px;">Beri Jadwal</a>
-							</td>																																												
+							<tr>
+								<td><?=$i+1;?></td>
+								<td><?=$list[$i]->name_forensik;?></td>
+								<td><?=$list[$i]->name_alur_perkara;?></td>
+								<td><?=$list[$i]->name_jaksa;?></td>
+								<td><?=$list[$i]->jabatan;?></td>
+								<td><?=$list[$i]->nrp;?></td>
+								<td><?=$list[$i]->telepon_jaksa;?></td>
+								<td><?=$list[$i]->email_jaksa;?></td>
+								<!-- <td><?=$list[$i]->token;?></td> -->
+								<td></td>
+								<td>
+									<a class="btn btn-warning col-lg-12" onclick="scheduling('<?=$list[$i]->token;?>')" style="margin:5px;">Beri Jadwal</a>
+								</td>								
+							</tr>
 					<?php
 							}
 						}
@@ -112,138 +112,6 @@
 </section>
 <script>
 $(document).ready(function(){
-	$("#btn-trigger-controll").click(function(){
-        $("#loadprosess").modal('show');        
-        Lobibox.notify('info', {msg: 'Proses'});
-        $("#loadprosess").modal('hide');        				
-		var res_status = 0;
-		var oid                 = $("#oid").val();
-		var crud                = $("#crud").val();
-		var f_surat             = $("#f_surat").val();
-		var f_tanggal_surat     = $("#f_tanggal_surat").val();
-		var f_name              = $("#f_name").val();
-		var f_tempat            = $("#f_tempat").val();
-		var f_tanggal_lahir     = $("#f_tanggal_lahir").val();
-		var f_suku              = $("#f_suku").val();
-		var f_agama             = $("#f_agama").val();
-		var f_keluarga          = $("#f_keluarga").val();
-		var f_warganegara       = $("#f_warganegara").val();										
-		var f_alamat            = $("#f_alamat").val();
-		var f_jaksa             = $("#f_jaksa").val();
-		var f_pengawal          = $("#f_pengawal").val();
-		var f_keluhan           = $("#f_keluhan").val();
-		var f_proses_hukum      = $("#f_proses_hukum").val();								
-
-
-		var data_sender = {
-			'oid'       			: oid,
-			'crud'      			: crud,
-			'f_surat'				: f_surat,
-			'f_tanggal_surat'    	: f_tanggal_surat,
-			'f_name'				: f_name,
-			'f_tempat'    			: f_tempat,
-			'f_tanggal_lahir' 		: f_tanggal_lahir,
-			'f_suku' 				: f_suku,
-			'f_agama' 				: f_agama,
-			'f_keluarga' 			: f_keluarga,
-			'f_warganegara' 		: f_warganegara,
-			'f_alamat' 				: f_alamat,
-			'f_jaksa' 				: f_jaksa,
-			'f_pengawal' 			: f_pengawal,
-			'f_keluhan' 			: f_keluhan,
-			'f_proses_hukum' 		: f_proses_hukum
-		}
-
-		if (crud == 'insert') 
-		{
-			res_status = 1;			
-			// if (f_username.length <= 0 || f_name.length <= 0 || f_password.length <= 0 || f_role.length <= 0) {
-			// 	res_status = 0;
-			// 	if (f_username.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Username belum terisi, mohon lengkapi data tersebut"
-			// 		});				
-			// 	} else if(f_name.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Nama belum terisi, mohon lengkapi data tersebut"
-			// 		});								
-			// 	} else if(f_password.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Password belum terisi, mohon lengkapi data tersebut"
-			// 		});								
-			// 	} else if(f_role.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Level Pengguna belum terisi, mohon lengkapi data tersebut"
-			// 		});								
-			// 	}
-			// }
-			// else
-			// {
-			// 	res_status = 1;
-			// }			
-		}
-		else if(crud == 'update')
-		{
-			res_status = 1;
-			// if (f_username.length <= 0 || f_name.length <= 0 || f_role.length <= 0) {
-			// 	res_status = 0;
-			// 	if (f_username.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Username belum terisi, mohon lengkapi data tersebut"
-			// 		});				
-			// 	} else if(f_name.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Nama belum terisi, mohon lengkapi data tersebut"
-			// 		});								
-			// 	} else if(f_role.length <= 0) {
-			// 		Lobibox.alert("warning", //AVAILABLE TYPES: "error", "info", "success", "warning"
-			// 		{
-			// 			title: 'Peringatan',					
-			// 			msg: "Data Level Pengguna belum terisi, mohon lengkapi data tersebut"
-			// 		});								
-			// 	}
-			// }
-			// else
-			// {
-			// 	res_status = 1;
-			// }			
-		}
-
-		if(res_status == 1)
-		{
-			$.ajax({
-				url :"<?php echo site_url();?>assessing/store",
-				type:"post",
-				data:{data_sender : data_sender},
-				beforeSend:function(){
-					$("#editData").modal('hide');
-					$("#loadprosess").modal('show');
-				},
-				success:function(msg){
-					var obj = jQuery.parseJSON (msg);
-					ajax_status(obj);
-				},
-				error:function(jqXHR,exception)
-				{
-					ajax_catch(jqXHR,exception);					
-				}
-			})	
-		}
-	
-	})
-
 	$("#btn-upload").click(function(){
 		var oid        = $("#oid").val();		
 		f_file         = $('#f_file').prop('files')[0];

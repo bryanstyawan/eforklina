@@ -200,13 +200,37 @@ if ($list != 0) {
                 </div>
             </div>
         </div><!-- /.box-body -->
-
-        <div class="box-footer">
-            <a class="btn btn-success pull-right" id="btn-proses-yes-ksp"><i class="fa fa-save"></i>&nbsp; Disposisi ke KSP</a>
-        </div>
     </div><!-- /.box -->
 </div>
 <div class="col-xs-4">
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Jadwal</h3>
+        </div>
+        <hr>
+        <div class="box-body">
+
+            <div class="row col-lg-12">
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Tanggal</label>
+                        <input type="text" class="form-control" disabled="disabled">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Prioritas</label>
+                        <select class="form-control" disabled="disabled">
+
+                        </select>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Usulan</h3>
@@ -247,6 +271,10 @@ if ($list != 0) {
             <a class="btn btn-success pull-right" id="btn-propose"><i class="fa fa-save"></i>&nbsp; Tetapkan</a>
         </div>        
     </div><!-- /.box -->    
+
+    <div class="col-lg-12">
+        <a class="btn btn-success pull-right" id="btn-proses-yes-ksp"><i class="fa fa-save"></i>&nbsp; Selesai</a>        
+    </div>
 </div>  
 <?php
 }
@@ -256,15 +284,15 @@ if ($list != 0) {
 
         $("#btn-proses-yes-ksp").click(function() {
             var data_sender = {
-			'remarks' : 'Telah menetapkan surat dan di disposisi ke Kepala Satuan Pelaksana'
+			'remarks' : 'Telah menetapkan surat'
 		}		
             Lobibox.confirm({
                 title: "Konfirmasi",
-                msg: "Apakah anda ingin melaporkan desposisi layanan ini ke KSP ?",
+                msg: "Pastikan data telah benar ?",
                 callback: function ($this, type) {
                     if (type === 'yes'){
                         $.ajax({
-                            url :"<?php echo site_url();?>forensic_services/next_step/<?=$token;?>/7/",
+                            url :"<?php echo site_url();?>forensic_services/next_step/<?=$token;?>/9/",
                             type:"post",
                             data:{data_sender : data_sender},                            
                             beforeSend:function(){
