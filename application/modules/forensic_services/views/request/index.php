@@ -48,7 +48,7 @@
 							<td></td>
 							<td>
 								<a class="btn btn-warning col-lg-12" onclick="verification_admin('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
-								<a class="btn btn-success col-lg-12" style="margin:5px;">Hak Akses</a>								
+								<a class="btn btn-success col-lg-12" onclick="create_password('<?=$list[$i]->token;?>')" style="margin:5px;">Hak Akses</a>								
 							</td>
 							</tr>																																												
 					<?php
@@ -365,19 +365,15 @@ function verification_admin(token) {
 	})	
 }
 
-
-
-
-
-function del(id)
+function create_password(token)
 {					
 	Lobibox.confirm({
 		title   : "Konfirmasi",
-		msg     : "Anda yakin akan menghapus data ini ?",
+		msg     : "Buat akun ini ?",
 		callback: function ($this, type) {
 			if (type === 'yes'){			
 				$.ajax({
-					url :"<?php echo site_url();?>bank_data/user/store/"+'delete/'+id,
+					url :"<?php echo site_url();?>forensic_services/create_user/"+token,
 					type:"post",
 					beforeSend:function(){
 						$("#editData").modal('hide');
@@ -395,51 +391,5 @@ function del(id)
 			}
 		}
 	})		
-}
-
-function proses(id) {
-	$.ajax({
-		url :"<?php echo site_url();?>assessing/proses_1/"+id,
-		type:"post",
-		beforeSend:function(){
-			$("#loadprosess").modal('show');
-			$("#forensikdata").html('');			
-		},
-		success:function(msg){
-			$(".form-control").val('');
-			$("#forensikdata").html(msg);			
-			$("#forensikdata").css({"display": ""})
-			$("#viewdata").css({"display": "none"})
-			$("#forensikdata > div > div > div.box-header > h3").html("Verifikasi Permohonan Assessing");		
-			$("#loadprosess").modal('hide');						
-		},
-		error:function(jqXHR,exception)
-		{
-			ajax_catch(jqXHR,exception);					
-		}
-	});	
-}
-
-function proses_direktur(id) {
-	$.ajax({
-		url :"<?php echo site_url();?>assessing/proses_permintaan_layanan_direktur/"+id,
-		type:"post",
-		beforeSend:function(){
-			$("#loadprosess").modal('show');
-			$("#forensikdata").html('');			
-		},
-		success:function(msg){
-			$(".form-control").val('');
-			$("#forensikdata").html(msg);			
-			$("#forensikdata").css({"display": ""})
-			$("#viewdata").css({"display": "none"})
-			$("#forensikdata > div > div > div.box-header > h3").html("Permintaan Layanan Assessing");		
-			$("#loadprosess").modal('hide');						
-		},
-		error:function(jqXHR,exception)
-		{
-			ajax_catch(jqXHR,exception);					
-		}
-	});	
 }
 </script>

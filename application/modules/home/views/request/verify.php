@@ -1,5 +1,5 @@
 <script type="text/javascript" src="<?php echo base_url();?>assets_home/material/js/jquery-3.2.1.min.js"></script>
-<section id="form_application" style="background-image:url('<?php echo base_url();?>assets_home/material/img//panorama-3094696_1920.jpg');">
+<section id="form_application" style="background-image:url('<?php echo base_url();?>assets_home/material/img//C360_2018-11-07-19-58-32-673.jpg');">
     <div class="rgba-black-strong py-5">
         <div class="container">
             <div class="wow fadeIn">
@@ -140,7 +140,7 @@
     </div>
 </section>
 
-<section id="form_message" style="display:none;background-image:url('<?php echo base_url();?>assets_home/material/img//panorama-3094696_1920.jpg');">
+<section id="form_message" style="display:none;background-image:url('<?php echo base_url();?>assets_home/material/img//C360_2018-11-07-19-58-32-673.jpg');">
 
     <div class="rgba-black-strong py-5">
         <div class="container">

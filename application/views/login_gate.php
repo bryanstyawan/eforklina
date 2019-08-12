@@ -583,12 +583,21 @@ function login() {
 				var obj = jQuery.parseJSON (msg);
 				if (obj.status == 1)
 				{
-					setTimeout(function(){
-						$("#loadprosess").modal('hide');
+					if (obj.data._session_role != 7) {
 						setTimeout(function(){
-							window.location.href = "<?=base_url();?>/auth";							
-						}, 1500);
-					}, 1500);
+							$("#loadprosess").modal('hide');
+							setTimeout(function(){
+								window.location.href = "<?=base_url();?>/auth";							
+							}, 1500);
+						}, 1500);						
+					} else {
+						setTimeout(function(){
+							$("#loadprosess").modal('hide');
+							setTimeout(function(){
+								window.location.href = "<?=base_url();?>/home/user";							
+							}, 1500);
+						}, 1500);						
+					}
 				}
 				else
 				{

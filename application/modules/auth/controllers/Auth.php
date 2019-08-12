@@ -46,7 +46,8 @@ class Auth extends CI_Controller
 			$res = array
 			(
 				'status' => 1,
-				'text'   => 'Verifikasi berhasil'
+				'text'   => 'Verifikasi berhasil',
+				'data'   => $data
 			);
 			echo json_encode($res);
 		}

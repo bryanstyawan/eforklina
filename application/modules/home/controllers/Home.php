@@ -289,11 +289,12 @@ class Home extends CI_Controller
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan anda telah berhasil diajukan.');
 
 			$this->load->library('email');
+			$get_request = $this->Allcrud->getData('mr_request',array('token'=>$token))->result_array();			
 
 			$subject = 'Permohonan layanan forensik klinik';
-			$message = '<p>Terima kasih telah melakukan permohonan layanan forensik klinik [E-forklina].
-							<br>
-						</p>';
+			$message = '<p>Terima kasih telah melakukan permohonan layanan forensik klinik [E-forklina].</p>
+						<p>Selanjutnya akan proses oleh tim forensik klinik.</p>
+						';
 			
 			// Get full html:
 			$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -318,7 +319,7 @@ class Home extends CI_Controller
 			$result = $this->email
 				->from('littlecorz2@gmail.com')
 				->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
-				->to('bryanstyawan@hotmail.com')
+				->to($get_request[0]['email'])
 				->subject($subject)
 				->message($body)
 				->send();
@@ -490,5 +491,13 @@ class Home extends CI_Controller
 						'text'   => $text_status
 					);
 		echo json_encode($res);		
+	}
+
+	public function user()
+	{
+		# code...
+		$data['carousel'] = 'off'; 
+		$data['content']  = "home/home/index";
+		$this->load->view('home',$data);		
 	}
 }

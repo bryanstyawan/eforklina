@@ -55,9 +55,21 @@ class Forensic_services extends CI_Controller {
 				//Load email library 
 				$this->load->library('email');
 
-				$subject = 'Permohonan layanan forensik klinik';
-				$message = '<p>This message has been sent for testing purposes.</p>';
-				
+				$message = '<p>Permohonan anda telah disetujui.</p>
+				<p>Berikut ini adalah akses anda untuk melakukan autentikasi data</p>
+				<p>Username : -</p>
+				<p>Password : -</p>																
+				';
+				$get_user = $this->Allcrud->getData('mr_user',array('username'=>$token))->result_array();				
+				if ($get_user != array()) {
+					# code...
+					$message = '<p>Permohonan anda telah disetujui.</p>
+					<p>Berikut ini adalah akses anda untuk melakukan autentikasi data</p>
+					<p>Username : '.$token.'</p>
+					<p>Password : '.$get_user[0]['string'].'</p>																
+					';
+				}
+				$subject = 'Permohonan layanan forensik klinik';				
 				// Get full html:
 				$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 				<html xmlns="http://www.w3.org/1999/xhtml">
@@ -81,10 +93,10 @@ class Forensic_services extends CI_Controller {
 				$result = $this->email
 					->from('littlecorz2@gmail.com')
 					->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
-					->to('bryanstyawan@hotmail.com')
+					->to($get_data[0]['email'])
 					->subject($subject)
 					->message($body)
-					->send();
+					->send();									
 			}
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan telah dikirim.');			
 		}		
@@ -560,5 +572,33 @@ class Forensic_services extends CI_Controller {
 		$data['files']     = $this->Mforensic_services->get_all_files_in($token);		
 		$this->load->view('forensic_services/request_2/admin/index',$data);						
 	}	
+
+	public function create_user($token)
+	{
+		# code...
+		$res_data = 0;
+		$get_data = $this->Allcrud->getData('mr_user',array('username'=>$token))->result_array();						
+		if ($get_data == array()) {
+			# code...
+			$password_code = $this->Globalrules->randomCode(6);
+			$data_store    = array(
+				'string'   => $password_code,
+				'name'     => $token,
+				'username' => $token,
+				'password' => md5($password_code),
+				'id_role'  => 7,
+				'status'   => 1
+			);
+			$res_data = $this->Allcrud->addData('mr_user',$data_store);			
+		}
+		$text_status = $this->Globalrules->check_status_res($res_data,'Akun telah dibuat.');			
+
+		$res = array
+					(
+						'status' => $res_data,
+						'text'   => $text_status
+					);
+		echo json_encode($res);		
+	}
 
 }

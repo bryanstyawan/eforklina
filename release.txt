@@ -1,4 +1,4 @@
-v1.0.0    
+v1.0.Beta    
 2019-08-12
 ==========
 New:
@@ -15,6 +15,9 @@ New:
 - Priority and schedule
 - chartJs
 - Mapping dataflow in dashboard
+- route login user
+- Dummy chartJs
+- Generate user from token
 Improved:
 - Note in verifiy [User]
 - Send email after insert data Termohon
@@ -28,10 +31,18 @@ Improved:
 - Code Review in kabid
 - Upload Files in admin
 - Send email in Kabid process
+- Background in request [user]
+- receipt email request
 Fixed:
 - Table Request
 Canceled:
 - No surat permohonan & tanggal surat [User Services]
+- architecture.jpg
+- kuala-lumpur.jpg
+- panorama.jpg
+- san-francisco.jpg
+- sample.jpg
+- man-2.jpg
 
 v1.0.0    
 2019-08-08

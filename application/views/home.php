@@ -22,25 +22,35 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/request';?>">Permohonan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/track_request/';?>">Penelusuran</a></li>                                 
-                    <li class="nav-item"><a class="nav-link" href="#">Informasi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Help Desk</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#about">Tentang Kami</a></li>                    
-                    <li class="nav-item">
-                            <a class="nav-link" href="<?=base_url().'auth';?>">
-                                <?php
-                                    if ($this->session->userdata('session_login')) {
-                                        // code...
-                                        echo "<b>Sisforklina</b>";
-                                    }
-                                    else {
-                                        // code...
-                                        echo "Masuk";
-                                    }
-                                ?>
-                            </a>                  
-                    </li>
+                        <?php
+                            if ($this->session->userdata('_session_login') == 1) {
+                                # code...
+                        ?>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/track_request/';?>">Penelusuran</a></li>                                 
+                                <li class="nav-item"><a class="nav-link" href="#">Informasi</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Help Desk</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#about">Tentang Kami</a></li>                    
+                                <li class="nav-item">
+                                        <a class="nav-link" href="<?=base_url().'auth/signout';?>">Keluar</a>                  
+                                </li>                                                        
+                        <?php
+                            } else {
+                                # code...
+                        ?>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/request';?>">Permohonan</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url().'home/track_request/';?>">Penelusuran</a></li>                                 
+                                <li class="nav-item"><a class="nav-link" href="#">Informasi</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Help Desk</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#about">Tentang Kami</a></li>                                            
+                                <li class="nav-item">
+                                        <a class="nav-link" href="<?=base_url().'auth';?>">
+                                            <?php echo "Masuk";?>
+                                        </a>                  
+                                </li>                            
+                        <?php
+                            }
+                            
+                        ?>
                     </ul>
                 </div>
                 </div>
@@ -53,7 +63,7 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" alt="First slide">
+                        <img class="d-block w-100" src="<?=base_url();?>assets_home/slider/1900x900medic.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(16).jpg" alt="Second slide">
@@ -101,7 +111,7 @@
             </div>
             <div class="footer-copyright">
                 <div class="container-fluid">
-                <p>Development.V.1.0.Alpha&copy; <a href="#">E-Forklina</a></p>
+                <p>Development.V.1.0.Beta&copy; <a href="#">E-Forklina</a></p>
                 </div>
             </div>
         </footer>
