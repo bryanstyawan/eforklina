@@ -43,6 +43,45 @@ if ($list != 0) {
                 msg: "Meminta peninjauan kembali untuk laporan ini ?",
                 callback: function ($this, type) {
                     if (type === 'yes'){
+                        Lobibox.prompt('text', //Any input type will be valid
+                        {
+                            title: 'Alasan peninjauan kembali',
+                            //Attributes of <input>
+                            attrs: {
+                                placeholder: "Keterangan",
+                                id: "prompt_remarks"
+                            },
+                            callback: function ($this1, type1) {
+                                console.log(type1);                                
+                                if (type1 == 'ok') 
+                                {
+                                    // console.log(this);
+                                    // console.log($("#prompt_remarks").val());
+
+                                    var data_sender = {
+                                        'remarks'       : 'Peninjauan kembali',
+                                        'remarks_note'  : $("#prompt_remarks").val()
+                                    }                                    
+                                    $.ajax({
+                                        url :"<?php echo site_url();?>forensic_services/prev_step/<?=$token;?>/7/",
+                                        type:"post",
+                                        data:{data_sender : data_sender},                            
+                                        beforeSend:function(){
+                                            $("#loadprosess").modal('show');
+                                        },
+                                        success:function(msg){
+                                            var obj = jQuery.parseJSON (msg);
+                                            ajax_status(obj);
+                                        },
+                                        error:function(jqXHR,exception)
+                                        {
+                                            ajax_catch(jqXHR,exception);					
+                                        }
+                                    })                                    
+                                }                                
+                            }                            
+
+                        });                        
                     }
                 }    
             });        

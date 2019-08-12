@@ -44,8 +44,7 @@
 							<td><?=$list[$i]->nrp;?></td>
 							<td><?=$list[$i]->telepon_jaksa;?></td>
 							<td><?=$list[$i]->email_jaksa;?></td>
-							<!-- <td><?=$list[$i]->token;?></td> -->
-							<td></td>
+							<td><?=$list[$i]->name_instansi;?></td>
 							<td>
 								<a class="btn btn-warning col-lg-12" onclick="verify_kabid('<?=$list[$i]->token;?>')" style="margin:5px;">Verifikasi</a>
 							</td>

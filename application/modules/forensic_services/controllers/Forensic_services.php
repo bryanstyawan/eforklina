@@ -89,14 +89,20 @@ class Forensic_services extends CI_Controller {
 				</html>';
 				// Also, for getting full html you may use the following internal method:
 				//$body = $this->email->full_html($subject, $message);
-				
+
 				$result = $this->email
-					->from('littlecorz2@gmail.com')
-					->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
-					->to($get_data[0]['email'])
+					->from('it.rsuadhyaksa.co.id@gmail.com')
+					->reply_to('it.rsuadhyaksa.co.id@gmail.com')    // Optional, an account where a human being reads.
+					->to($get_data[0]['email'])				
 					->subject($subject)
 					->message($body)
-					->send();									
+					->send();					
+					
+					// var_dump($result);
+					// echo '<br />';
+					// echo $this->email->print_debugger();
+					
+					// exit;					
 			}
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan telah dikirim.');			
 		}		
@@ -109,6 +115,41 @@ class Forensic_services extends CI_Controller {
 					);
 		echo json_encode($res);								
 	}
+
+	public function prev_step($token,$status)
+	{
+		# code...
+		$data_sender                   = $this->input->post('data_sender');		
+		$res_data                      = "";
+		$text_status                   = "";
+		$data_store['status']          = $status;
+		$data_store['remark_for_note'] = $data_sender['remarks_note'];		
+		$get_data                      = $this->Allcrud->getData('mr_request',array('token'=>$token))->result_array();				
+		if ($get_data != array()) {
+			# code...
+			$res_data             = $this->Allcrud->editData('mr_request',$data_store,array('token'=>$token));
+			$res_data             = $this->Allcrud->editData('mr_services',$data_store,array('token'=>$token));					
+			if ($res_data['status'] == 1) {
+				# code...
+				$data_timeline = array(
+					'token'          => $token,
+					'remarks'           => $data_sender['remarks'],
+					'audit_time_insert' => date('Y-m-d H:i:s'), 'audit_user_insert' => $this->session->userdata('_session_user')
+				);
+				$res_data = $this->Allcrud->addData('mr_timeline',$data_timeline);				
+			}
+
+			$text_status = $this->Globalrules->check_status_res($res_data,'Meminta peninjauan kembali.');			
+		}		
+
+		$res = array
+					(
+						'status' => $res_data,
+						'token'  => $token,
+						'text'   => $text_status
+					);
+		echo json_encode($res);								
+	}	
 
 	public function propose_team()
 	{

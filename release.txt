@@ -18,6 +18,7 @@ New:
 - route login user
 - Dummy chartJs
 - Generate user from token
+- Peninjauan kembali [kabid-ksp]
 Improved:
 - Note in verifiy [User]
 - Send email after insert data Termohon
@@ -36,6 +37,8 @@ Improved:
 - Slider Carousel
 Fixed:
 - Table Request
+- Component info Termohon
+- Component info pemohon
 Canceled:
 - No surat permohonan & tanggal surat [User Services]
 - architecture.jpg

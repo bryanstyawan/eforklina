@@ -20,20 +20,6 @@
                     <input type="text" class="form-control" value="<?=$list[0]->name_perkara;?>" disabled="disabled">
                 </div>
             </div>                
-
-            <div class="col-md-12">                    
-                <div class="form-group">
-                    <label>Nomor Surat Permohonan</label>
-                    <input type="text" class="form-control" value="<?=$list[0]->no_surat_service;?>" disabled="disabled">
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label>Tanggal Surat</label>
-                    <input type="text" class="form-control timerange" value="<?=$list[0]->tanggal_surat_service;?>" disabled="disabled">
-                </div>
-            </div>
             
             <div class="col-md-12">
                 <div class="form-group">
