@@ -17,7 +17,7 @@
     <body id="top">
         <header <?php echo ($carousel == 'off') ? 'style="height: 0px;"' : '' ;?>>
             <!-- Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" style="background-color: #3949ab !important;" id="navbar">
                 <div class="container"><a class="navbar-brand" href="#"><strong>E-Forklina</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarContent">
@@ -63,6 +63,13 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
+                        <img class="d-block w-100" src="<?=base_url();?>assets_home/slider/C360_2018-11-07-19-58-32-673.jpg" style="height: 660px;" alt="First slide">
+                    </div>                                        
+                    <!-- 
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="<?=base_url();?>assets_home/slider/tim.JPG" style="height: 660px;" alt="First slide">
+                    </div>                     -->
+                    <!-- <div class="carousel-item">
                         <img class="d-block w-100" src="<?=base_url();?>assets_home/slider/1900x900medic.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
@@ -70,7 +77,7 @@
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg" alt="Third slide">
-                    </div>
+                    </div> -->
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

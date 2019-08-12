@@ -33,6 +33,7 @@ Improved:
 - Send email in Kabid process
 - Background in request [user]
 - receipt email request
+- Slider Carousel
 Fixed:
 - Table Request
 Canceled:

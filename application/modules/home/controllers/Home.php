@@ -317,8 +317,8 @@ class Home extends CI_Controller
 			//$body = $this->email->full_html($subject, $message);
 			
 			$result = $this->email
-				->from('littlecorz2@gmail.com')
-				->reply_to('littlecorz2@gmail.com')    // Optional, an account where a human being reads.
+			->from('it.rsuadhyaksa.co.id@gmail.com')
+			->reply_to('it.rsuadhyaksa.co.id@gmail.com')    // Optional, an account where a human being reads.
 				->to($get_request[0]['email'])
 				->subject($subject)
 				->message($body)
