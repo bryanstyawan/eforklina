@@ -145,6 +145,43 @@ class Home extends CI_Controller
 				$res_data = $this->Allcrud->addData('mr_timeline',$data_timeline);				
 			}
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan anda telah berhasil diajukan.');
+
+			$this->load->library('email');
+			$get_request = $this->Allcrud->getData('mr_request',array('token'=>$data_store['token']))->result_array();			
+
+			$subject = 'Permohonan layanan forensik klinik';
+			$message = '<p>Terima kasih telah melakukan permohonan layanan forensik klinik [E-forklina].</p>
+						<p>Kode Token anda adalah '.$data_store['token'].'. Gunakan kode token ini untuk melakukan verifikasi data.</p>
+						';
+			
+			// Get full html:
+			$body = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+			<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=' . strtolower(config_item('charset')) . '" />
+				<title>' . html_escape($subject) . '</title>
+				<style type="text/css">
+					body {
+						font-family: Arial, Verdana, Helvetica, sans-serif;
+						font-size: 16px;
+					}
+				</style>
+			</head>
+			<body>
+			' . $message . '
+			</body>
+			</html>';
+			// Also, for getting full html you may use the following internal method:
+			//$body = $this->email->full_html($subject, $message);
+			
+			$result = $this->email
+			->from('it.rsuadhyaksa.co.id@gmail.com')
+			->reply_to('it.rsuadhyaksa.co.id@gmail.com')    // Optional, an account where a human being reads.
+				->to($data_store['email'])
+				->subject($subject)
+				->message($body)
+				->send();
+
 		} elseif ($data_sender['crud'] == 'update') {
 			# code...
 		} elseif ($data_sender['crud'] == 'delete') {
@@ -289,7 +326,7 @@ class Home extends CI_Controller
 			$text_status = $this->Globalrules->check_status_res($res_data,'Permohonan anda telah berhasil diajukan.');
 
 			$this->load->library('email');
-			$get_request = $this->Allcrud->getData('mr_request',array('token'=>$token))->result_array();			
+			$get_request = $this->Allcrud->getData('mr_request',array('token'=>$data_sender['f_token']))->result_array();			
 
 			$subject = 'Permohonan layanan forensik klinik';
 			$message = '<p>Terima kasih telah melakukan permohonan layanan forensik klinik [E-forklina].</p>
